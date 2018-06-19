@@ -1,0 +1,7 @@
+alias ~='cd ~'
+alias ll='ls -la'
+alias gs='git status'
+alias grm='git pull --rebase origin master'
+alias gp='git push'
+alias gl='git log'
+alias gll='git log --oneline --all --graph --decorate  $*'
