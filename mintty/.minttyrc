@@ -1,0 +1,10 @@
+BoldAsFont=-1
+FontHeight=10
+Font=Lucida Console
+Transparency=off
+OpaqueWhenFocused=no
+CursorType=block
+Columns=140
+Rows=45
+ThemeFile=dracula
+Term=xterm-256color

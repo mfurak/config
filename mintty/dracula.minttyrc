@@ -1,7 +1,7 @@
 ForegroundColour=248,248,242
 BackgroundColour=40,42,54
 Black=0,0,0
-BoldBlack=104,104,104
+BoldBlack=230,230,230
 Red=255,85,85
 BoldRed=255,110,103
 Green=80,250,123
@@ -16,6 +16,3 @@ Cyan=139,233,253
 BoldCyan=154,237,254
 White=191,191,191
 BoldWhite=230,230,230
-BoldAsFont=-1
-ThemeFile=dracula
-FontSize=10
