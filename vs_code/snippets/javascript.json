@@ -10,5 +10,12 @@
 			"console.log('$1', $2);"
 		],
 		"description": "Log output to console"
+	},
+	"Catch block": {
+		"prefix": "ca",
+		"body": [
+			"catch (e) {$1}"
+		],
+		"description": "Catch block"
 	}
 }

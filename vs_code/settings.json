@@ -2,15 +2,10 @@
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     "workbench.colorTheme": "Atom One Light",
-    "workbench.startupEditor": "newUntitledFile",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.colorCustomizations": {},
-    "materialTheme.cache.workbench.settings": {
-        "accentPrevious": "Acid Lime"
-    },
     "window.zoomLevel": 0,
     "editor.wordWrap": "on",
-    // "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "editor.formatOnSave": true,
     "editor.tabSize": 2,
@@ -18,5 +13,10 @@
     "workbench.statusBar.feedback.visible": false,
     "gitlens.advanced.messages": {
         "suppressShowKeyBindingsNotice": true
-    }
+    },
+    "editor.renderWhitespace": "none",
+    "jshint.options": {
+        "esversion": 6
+    },
+    "trailing-spaces.trimOnSave": true
 }
