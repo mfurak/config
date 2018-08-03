@@ -45,10 +45,6 @@
         "when": "textInputFocus && !editorReadonly"
     },
     {
-        "key": "alt+j",
-        "command": "extension.aceJump"
-    },
-    {
         "key": "alt+oem_102",
         "command": "editor.action.triggerSuggest",
         "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
@@ -199,5 +195,27 @@
         "key": "ctrl+shift+v",
         "command": "-markdown.showPreview",
         "when": "editorLangId == 'markdown'"
+    },
+    {
+        "key": "ctrl+x d",
+        "command": "editor.action.goToDeclaration",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
+        "key": "f12",
+        "command": "-editor.action.goToDeclaration",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
+        "key": "ctrl+x ctrl+r",
+        "command": "workbench.action.openRecent"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "-workbench.action.openRecent"
+    },
+    {
+        "key": "alt+j",
+        "command": "findJump.activate"
     }
 ]

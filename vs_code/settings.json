@@ -18,5 +18,12 @@
     "jshint.options": {
         "esversion": 6
     },
-    "trailing-spaces.trimOnSave": true
+    "trailing-spaces.trimOnSave": true,
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.fontFamily": " 'Fira Code',Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "files.associations": {
+        "*.js": "javascriptreact"
+    },
+    "editor.fontSize": 13,
 }
