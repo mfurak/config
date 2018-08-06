@@ -6,5 +6,5 @@ OpaqueWhenFocused=no
 CursorType=block
 Columns=140
 Rows=45
-ThemeFile=dracula
+ThemeFile=dracula.minttyrc
 Term=xterm-256color
