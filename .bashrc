@@ -5,6 +5,8 @@ alias .='explorer .'
 #git 
 alias gs='git status'
 
+alias gcl='git clone $1'
+
 alias gp='git push'
 
 alias gpd='git pull origin develop'
