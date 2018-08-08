@@ -20,7 +20,8 @@ alias gbd='git branch -d $*'
 alias gbdf='git branch -D $*'
 
 alias gl='git log'
-alias gll='git log --oneline --all --graph --decorate  $*'
+alias gll='git log --oneline --graph --decorate  $*'
+alias glla='git log --oneline --all --graph --decorate  $*'
 
 alias gco='git checkout $1'
 
