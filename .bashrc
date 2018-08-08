@@ -1,5 +1,7 @@
 #general
 alias ~='cd ~'
+alias ..='cd ../'
+alias ...='cd ../../'
 alias ll='ls -la'
 alias .='explorer .'
 #git 
