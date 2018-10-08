@@ -38,3 +38,5 @@ alias gcpa='git cherry-pick --abort'
 alias gcpc='git cherry-pick --continue'
 
 alias gmt='git mergetool'
+
+alias gd='git diff'
