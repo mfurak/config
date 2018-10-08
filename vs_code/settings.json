@@ -1,28 +1,30 @@
 {
-    "telemetry.enableCrashReporter": false,
-    "telemetry.enableTelemetry": false,
-    "workbench.colorTheme": "Atom One Light",
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorCustomizations": {},
-    "window.zoomLevel": 0,
-    "editor.wordWrap": "on",
-    "workbench.editor.enablePreviewFromQuickOpen": false,
-    "editor.formatOnSave": true,
-    "editor.tabSize": 2,
-    "editor.insertSpaces": true,
-    "workbench.statusBar.feedback.visible": false,
-    "gitlens.advanced.messages": {
-        "suppressShowKeyBindingsNotice": true
-    },
-    "jshint.options": {
-        "esversion": 6
-    },
-    "trailing-spaces.trimOnSave": true,
-    "workbench.startupEditor": "newUntitledFile",
-    "editor.fontFamily": " 'Fira Code',Consolas, 'Courier New', monospace",
-    "editor.fontLigatures": true,
-    "files.associations": {
-        "*.js": "javascriptreact"
-    },
-    "editor.fontSize": 13
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false,
+  "code-runner.enableAppInsights": false,
+  "extensions.ignoreRecommendations": true,
+  "workbench.colorTheme": "Atom One Light",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorCustomizations": {},
+  "window.zoomLevel": 0,
+  "editor.wordWrap": "on",
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "workbench.statusBar.feedback.visible": false,
+  "gitlens.advanced.messages": {
+    "suppressShowKeyBindingsNotice": true
+  },
+  "jshint.options": {
+    "esversion": 6
+  },
+  "trailing-spaces.trimOnSave": true,
+  "workbench.startupEditor": "newUntitledFile",
+  "editor.fontFamily": " 'Fira Code',Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "files.associations": {
+    "*.js": "javascriptreact"
+  },
+  "editor.fontSize": 13
 }
