@@ -2,7 +2,6 @@
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
   "code-runner.enableAppInsights": false,
-  "extensions.ignoreRecommendations": true,
   "workbench.colorTheme": "Atom One Light",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorCustomizations": {},
@@ -26,5 +25,7 @@
   "files.associations": {
     "*.js": "javascriptreact"
   },
-  "editor.fontSize": 13
+  "editor.fontSize": 13,
+  "extensions.showRecommendationsOnlyOnDemand": true,
+  "extensions.ignoreRecommendations": true
 }
