@@ -4,6 +4,7 @@ alias ..='cd ../'
 alias ...='cd ../../'
 alias ll='ls -la'
 alias .='explorer .'
+
 #git 
 alias gs='git status'
 
@@ -24,6 +25,7 @@ alias gbdf='git branch -D $*'
 alias gl='git log'
 alias gll='git log --oneline --graph --decorate  $*'
 alias glla='git log --oneline --all --graph --decorate  $*'
+alias gllf='git log --oneline --decorate --name-status $*'
 
 alias gco='git checkout $1'
 
@@ -40,3 +42,7 @@ alias gcpc='git cherry-pick --continue'
 alias gmt='git mergetool'
 
 alias gd='git diff'
+
+alias gri='git rebase -i &*'
+alias grc='git rebase --continue'
+alias gra='git rebase --abort'
