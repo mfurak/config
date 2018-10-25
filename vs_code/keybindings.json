@@ -214,7 +214,7 @@
     "command": "findJump.activate"
   },
   {
-    "key": "ctrl+x ctrl+g",
+    "key": "alt+g",
     "command": "workbench.action.gotoLine"
   },
   {
