@@ -1,0 +1,11 @@
+[merge]
+	tool = kdiff3
+[core]
+	autocrlf = true
+	editor = emacs -nw
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+	ui = auto
