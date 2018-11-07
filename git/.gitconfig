@@ -1,0 +1,18 @@
+#General
+#[mergetool "kdiff3"]
+#	path = C:\\Program Files\\KDiff3\\kdiff3.exe
+[diff]
+    tool = kdiff3
+[merge]
+    tool = kdiff3
+[core]
+	autocrlf = true
+	editor = emacs -nw
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+	ui = auto
+[credential]
+	helper = manager
