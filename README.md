@@ -1,6 +1,5 @@
 ## Various configuration files
 
-
 To fix `-bash: $'\r': command not found` error in Cygwin add `igncr` to the SHELLOPTS environment variable. On windows `setx SHELLOPTS "igncr"` will set the variable.
 
 ### Using Git credential manager for windows with Cygwin
@@ -12,3 +11,4 @@ To get GUI prompts for credentials, execute: `git config --global credential.mod
  
 If you want this to be a per-repository setting, remove the `--global` option.
 
+### Using [KDiff3](https://sourceforge.net/projects/kdiff3/files/) as the merge tool. Make sure it's set in PATH.
