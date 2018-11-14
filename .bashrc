@@ -12,8 +12,10 @@
 	alias gcl='git clone $1'
 
 	alias gp='git push'
+	#create a new branch on origin with the name of the current branch and push the new branch
+	alias gpn='git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)'
 
-	alias gpd='git pull origin develop'
+	alias gpld='git pull origin develop'
 	alias grd='git pull --rebase origin develop'
 	alias gpl='git pull $*'
 
@@ -115,4 +117,4 @@ function parse_git_dirty {
 	fi
 }
 
-export PS1="\[\e[32m\]\u\[\e[m\]\[\e[32m\]@\[\e[m\]\[\e[32m\]\h\[\e[m\] \[\e[35m\]\s\[\e[m\] \[\e[33m\]\w\[\e[m\] \[\e[36m\]\`parse_git_branch\`\[\e[m\]\\n\$ "
+#export PS1="\[\e[32m\]\u\[\e[m\]\[\e[32m\]@\[\e[m\]\[\e[32m\]\h\[\e[m\] \[\e[35m\]\s\[\e[m\] \[\e[33m\]\w\[\e[m\] \[\e[36m\]\`parse_git_branch\`\[\e[m\]\\n\$ "
