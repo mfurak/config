@@ -1,5 +1,5 @@
 # Aliases
-	##general
+	##General
 	alias ~='cd ~'
 	alias ..='cd ../'
 	alias ...='cd ../../'
@@ -17,7 +17,8 @@
 	alias grd='git pull --rebase origin develop'
 	alias gpl='git pull $*'
 
-	alias gf='git fetch'
+	#--prune - remove any remote-tracking references that no longer exist on the remote
+	alias gf='git fetch -p'
 
 	alias gb='git branch'
 	alias gbd='git branch -d $*'
