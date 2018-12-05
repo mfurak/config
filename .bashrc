@@ -16,7 +16,7 @@
 	alias gpn='git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)'
 
 	alias gpld='git pull origin develop'
-	alias grd='git pull --rebase origin develop'
+	alias gprd='git pull --rebase origin develop'
 	alias gpl='git pull $*'
 
 	#--prune - remove any remote-tracking references that no longer exist on the remote
