@@ -27,5 +27,6 @@
   },
   "editor.fontSize": 13,
   "extensions.showRecommendationsOnlyOnDemand": true,
-  "extensions.ignoreRecommendations": true
+  "extensions.ignoreRecommendations": true,
+  "yaml.format.enable": true
 }
