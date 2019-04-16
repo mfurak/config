@@ -28,5 +28,7 @@
   "editor.fontSize": 13,
   "extensions.showRecommendationsOnlyOnDemand": true,
   "extensions.ignoreRecommendations": true,
-  "yaml.format.enable": true
+  "yaml.format.enable": true,
+  "material-icon-theme.folders.color": "#90a4ae",
+  "editor.largeFileOptimizations": false
 }
