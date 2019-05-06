@@ -16,3 +16,5 @@
 	ui = auto
 [credential]
 	helper = manager
+[rebase]
+	autoSquash = true
