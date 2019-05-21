@@ -1,4 +1,4 @@
 #! /bin/bash
 
-cp "$APPDATA"/.emacs ./
-cp -r "$APPDATA"/.emacs.d ./
+cp "$HOME"/.emacs ./
+cp -r "$HOME"/.emacs.d ./
