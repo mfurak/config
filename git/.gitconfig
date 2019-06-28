@@ -7,7 +7,7 @@
     tool = kdiff3
 [core]
 	autocrlf = true
-	editor = emacs -nw
+	editor = nano
 [color]
 	diff = auto
 	status = auto
