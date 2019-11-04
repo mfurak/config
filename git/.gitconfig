@@ -14,5 +14,5 @@
 	branch = auto
 	interactive = auto
 	ui = auto
-[credential]
-	helper = manager
+#[credential]
+#	helper = manager
