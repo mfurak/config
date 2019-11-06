@@ -17,5 +17,8 @@
 #[credential]
 #	helper = manager
 
+[push]
+	default = matching
+
 [rebase]
 	autoSquash = true

@@ -5,7 +5,12 @@
 	alias ...='cd ../../'
 	alias ll='ls -la'
 	alias .='explorer .'
-
+		
+	## Python
+	alias jn='jupyter notebook'
+	alias py='python'
+	alias psh='pipenv shell'
+	
 	##Git
 	alias gs='git status'
 
@@ -57,5 +62,8 @@
 
 	alias gst='git stash'
 	alias gsta='git stash apply'
+	
+	alias gcn='git clean -f'
+	alias gcnd='git clean -fd'
 
 source /usr/share/bash-completion/completions/*
