@@ -6,7 +6,6 @@
 [merge]
     tool = kdiff3
 [core]
-	autocrlf = true
 	editor = nano
 [color]
 	diff = auto

@@ -1,15 +1,19 @@
+#-------------------------------CUSTOM------------------------------------------------------------------------------
 # Aliases
 	##General
 	alias ~='cd ~'
 	alias ..='cd ../'
 	alias ...='cd ../../'
 	alias ll='ls -la'
-	alias .='explorer .'
 		
 	## Python
 	alias jn='jupyter notebook'
 	alias py='python'
 	alias psh='pipenv shell'
+	
+	## Docker
+	alias drm='docker rm $(docker ps -a -q)'
+	alias drmi='docker rmi $(docker images -q)'
 	
 	##Git
 	alias gs='git status'
@@ -67,3 +71,5 @@
 	alias gcnd='git clean -fd'
 
 source /usr/share/bash-completion/completions/*
+
+#-------------------------------END OF CUSTOM------------------------------------------------------------------------------
