@@ -1,10 +1,11 @@
 BoldAsFont=-1
-FontHeight=10
-Font=Lucida Console
-Transparency=off
-OpaqueWhenFocused=no
+FontHeight=12
+Font=Consolas
+Transparency=low
+OpaqueWhenFocused=yes
 CursorType=block
 Columns=140
 Rows=45
-ThemeFile=dracula.minttyrc
+ThemeFile=base16-atelier-forest-light-256.minttyrc
 Term=xterm-256color
+BellType=0
