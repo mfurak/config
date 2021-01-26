@@ -1,20 +1,23 @@
-#-------------------------------CUSTOM------------------------------------------------------------------------------
+#-------------------------------DEFAULT-------------------------------------------------------------------
 # Aliases
 	##General
 	alias ~='cd ~'
 	alias ..='cd ../'
 	alias ...='cd ../../'
 	alias ll='ls -la'
-		
+	
+	## Windows
+	alias e='explorer .'
+
 	## Python
 	alias jn='jupyter notebook'
 	alias py='python'
 	alias psh='pipenv shell'
-	
+
 	## Docker
 	alias drm='docker rm $(docker ps -a -q)'
 	alias drmi='docker rmi $(docker images -q)'
-	
+
 	##Git
 	alias gs='git status'
 
@@ -66,10 +69,35 @@
 
 	alias gst='git stash'
 	alias gsta='git stash apply'
-	
+
 	alias gcn='git clean -f'
 	alias gcnd='git clean -fd'
 
+# source Git bash completions
 source /usr/share/bash-completion/completions/*
 
-#-------------------------------END OF CUSTOM------------------------------------------------------------------------------
+# detect and run ssh-agent ----- HAX if Windows isn't running ssh-agent automatically
+env=~/.ssh/agent.env
+
+agent_load_env () { test -f "$env" && . "$env" >| /dev/null ; }
+
+agent_start () {
+	(umask 077; ssh-agent >| "$env")
+	. "$env" >| /dev/null ; }
+
+agent_load_env
+
+# agent_run_state: 0=agent running w/ key; 1=agent w/o key; 2= agent not running
+agent_run_state=$(ssh-add -l >| /dev/null 2>&1; echo $?)
+
+if [ ! "$SSH_AUTH_SOCK" ] || [ $agent_run_state = 2 ]; then
+	agent_start
+	ssh-add
+elif [ "$SSH_AUTH_SOCK" ] && [ $agent_run_state = 1 ]; then
+	ssh-add
+fi
+
+unset env
+
+#-------------------------------END OF DEFAULT------------------------------------------------------------
+
