@@ -5,7 +5,7 @@
 	alias ..='cd ../'
 	alias ...='cd ../../'
 	alias ll='ls -la'
-	
+
 
 	## Python
 	alias jn='jupyter notebook'
@@ -38,7 +38,7 @@
 
 	alias gl='git log'
 	alias gll='git log --oneline --graph --decorate  $@'
-	alias glla='git log --oneline --all --graph --decorate  $@'
+	alias glla='git log --oneline --all --graph --decorate $@'
 	alias gllf='git log --oneline --decorate --name-status $@'
 
 	alias gco='git checkout $1'
@@ -46,8 +46,8 @@
 	alias grs='git reset $@'
 	alias grsf='git reset --hard $@'
 
-	alias grt='git restore $@'
-	alias grts='git restore --staged $@'
+	alias grr='git restore $@'
+	alias grrs='git restore --staged $@'
 
 	alias ga='git add $@'
 
@@ -65,6 +65,7 @@
 
 	alias grb='git rebase $@'
 	alias gri='git rebase -i $@'
+	alias grih="smart_git_rebase"
 	alias grc='git rebase --continue'
 	alias gra='git rebase --abort'
 
@@ -74,7 +75,7 @@
 	alias gcn='git clean -f'
 	alias gcnd='git clean -fd'
 
+smart_git_rebase() { git rebase -i HEAD~$1; }
 # source Git bash completions
 source /usr/share/bash-completion/completions/*
-
 #-------------------------------END OF DEFAULT------------------------------------------------------------
