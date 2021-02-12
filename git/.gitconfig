@@ -1,7 +1,7 @@
 ##################################### DEFAULT #####################################
 [core]
-	editor = nano
-	autocrlf = true
+	editor = emacs -nw
+	autocrlf = input
 [color]
 	diff = auto
 	status = auto
@@ -17,20 +17,4 @@
 	rebase = false
 [fetch]
 	prune = false
-[diff]
-	tool = kdiff3
-	guitool = kdiff3
-[merge]
-	tool = kdiff3
-	guitool = kdiff3
-
-############## WINDOWS SPECIFIC #########################
-[difftool "kdiff3"]
-	path = C:/Program Files/KDiff3/kdiff3.exe
-	cmd = \"C:/Program Files/KDiff3/kdiff3.exe\" \"$LOCAL\" \"$REMOTE\"
-[mergetool "kdiff3"]
-	path = C:/Program Files/KDiff3/kdiff3.exe
-	cmd = \"C:/Program Files/KDiff3/kdiff3.exe\" \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
-#########################################################
-
 ##################################### END OF DEFAULT ##############################
