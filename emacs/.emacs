@@ -1,45 +1,49 @@
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
-(package-initialize)
-
 ;; ============================== MY CONFIG =================================
+
 ;; PACKAGES
 ;; --------------------------------------
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 
+; list the packages you want
+(setq package-list
+      '(
+	 ace-jump-mode
+	 better-defaults
+	 ;; blacken
+	 comment-dwim-2
+	 ;; ein
+	 elpy
+	 fill-column-indicator
+	 flycheck
+	 ;; jupyter
+	 magit
+	 ;; material-theme
+	 py-autopep8
+       )
+      )
+
+; list the repositories containing them
+(setq package-archives '(("elpa" . "http://tromey.com/elpa/")
+			 ("gnu" . "http://elpa.gnu.org/packages/")
+			 ("melpa" . "http://melpa.org/packages/")
+			))
+
+; activate all the packages (in particular autoloads)
 (package-initialize)
-(when (not package-archive-contents)
+
+; fetch the list of packages available
+(unless package-archive-contents
   (package-refresh-contents))
 
-(defvar myPackages
-  '(
-    ace-jump-mode
-    better-defaults
-    ;; blacken				
-    comment-dwim-2
-    ;; ein
-    elpy
-    fill-column-indicator
-    flycheck
-    ;; jupyter
-    magit
-    material-theme
-    py-autopep8
-  )
-)
+; install the missing packages
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
 
-;; (mapc #'(lambda (package)
-;;     (unless (package-installed-p package)
-;;       (package-install package)))
-;;       myPackages)
-
-(require 'fill-column-indicator)	
 
 ;; BASIC CUSTOMIZATION
 ;; --------------------------------------
+(require 'fill-column-indicator)
 (ido-mode 't)
 (setq completion-ignore-case  t)
 (setq inhibit-startup-screen t)
@@ -58,14 +62,14 @@
 ;; change location of backup files
 (defvar --backup-directory "~/emacs_saves")
 (if (not (file-exists-p --backup-directory))
-        (make-directory --backup-directory t))
+	(make-directory --backup-directory t))
 (setq backup-directory-alist `(("." . ,--backup-directory)))
 (setq backup-by-copying t)
 
 
 ;; THEME
 ;; --------------------------------------
-(load-theme 'material-light t)
+;; (load-theme 'material-light t)
 
 
 ;; KEY CONFIGURATION
@@ -135,18 +139,3 @@
 (add-hook 'company-completion-finished-hook 'company-maybe-turn-on-fci)
 (add-hook 'company-completion-cancelled-hook 'company-maybe-turn-on-fci)
 ;; =============================== END OF MY CONFIG ==========================
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (ace-jump-mode better-defaults comment-dwim-2 elpy flycheck magit material-theme py-autopep8 fill-column-indicator))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
