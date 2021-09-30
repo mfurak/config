@@ -1,0 +1,16 @@
+##################################### WINDOWS #####################################
+[core]
+	editor = nano
+[diff]
+	tool = kdiff3
+	guitool = kdiff3
+[merge]
+	tool = kdiff3
+	guitool = kdiff3
+[difftool "kdiff3"]
+	path = C:/Program Files/KDiff3/kdiff3.exe
+	cmd = \"C:/Program Files/KDiff3/kdiff3.exe\" \"$LOCAL\" \"$REMOTE\"
+[mergetool "kdiff3"]
+	path = C:/Program Files/KDiff3/kdiff3.exe
+	cmd = \"C:/Program Files/KDiff3/kdiff3.exe\" \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+##################################### END OF WINDOWS ##############################

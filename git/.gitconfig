@@ -1,0 +1,21 @@
+################################# DEFAULT #####################################
+[core]
+	autocrlf = false
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+	ui = auto
+[push]
+    default = current
+[rebase]
+	autoSquash = true
+	autoStash = false
+[pull]
+	rebase = false
+[fetch]
+	prune = true
+[user]
+	useConfigOnly = true
+############################## END OF DEFAULT #################################

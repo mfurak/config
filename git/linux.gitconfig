@@ -1,0 +1,10 @@
+################################# LINUX #######################################
+[core]
+	editor = emacs -nw
+[merge]
+	tool = kdiff3
+	guitool = kdiff3
+[diff]
+	tool = kdiff3
+	guitool = kdiff3
+############################## END OF LINUX ###################################
