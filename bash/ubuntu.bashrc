@@ -1,0 +1,5 @@
+#-------------------------------UBUNTU--------------------------------------------------------------------
+## Aliases
+alias e='gio open .'
+alias up='sudo apt update && sudo apt dist-upgrade -y && sudo apt autoremove -y && sudo apt autoclean -y'
+#-------------------------------END OF UBUNTU-------------------------------------------------------------
