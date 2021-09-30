@@ -1,0 +1,14 @@
+BoldAsFont=yes
+FontHeight=12
+Font=Cascadia Code
+Transparency=off
+OpaqueWhenFocused=no
+CursorType=block
+Columns=140
+Rows=40
+ThemeFile=base16-atelier-dune-light.minttyrc
+Term=xterm-256color
+BellType=0
+MiddleClickAction=void
+RightClickAction=paste
+CtrlShiftShortcuts=yes
