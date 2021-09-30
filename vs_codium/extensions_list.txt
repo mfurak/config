@@ -1,0 +1,17 @@
+akamud.vscode-theme-onelight
+dbaeumer.jshint
+dbaeumer.vscode-eslint
+dsznajder.es7-react-js-snippets
+eamodio.gitlens
+esbenp.prettier-vscode
+joshpeng.sublime-babel-vscode
+lfs.vscode-emacs-friendly
+mksafi.find-jump
+ms-vscode.powershell
+nisheetjain.emacs
+PKief.material-icon-theme
+redhat.vscode-yaml
+rkwan94.vscode-emacs-improved
+shardulm94.trailing-spaces
+wayou.vscode-todo-highlight
+xabikos.JavaScriptSnippets
