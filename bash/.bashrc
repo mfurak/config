@@ -46,6 +46,7 @@
 	alias gllf='git log --oneline --decorate --name-status $@'
 
 	alias gco='git checkout $1'
+	alias gcom='gco master'
 
 	alias grs='git reset $@'
 	alias grsf='git reset --hard $@'
