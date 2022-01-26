@@ -33,7 +33,6 @@
 	alias gprm='git pull --rebase origin master'
 	alias gpl='git pull $@'
 
-	#--prune - remove any remote-tracking references that no longer exist on the remote <- done by .gitconfig
 	alias gf='git fetch'
 
 	alias gb='git branch'
@@ -95,10 +94,12 @@ git_smart_diff() { git show HEAD~$1; }
 git_delete_stale_remote_branches() { gf && git branch -vv | awk '/^[^\*].*\[origin\/.*gone\]/ {print $1}' | xargs -r git branch -D; }
 git_delete_stale_local_branches() { gf && git branch -vv | awk '!/^\*|\[origin\// {print $1}' | xargs -r git branch -D; }
 
-# add bash completions <- requires bash-completion pkg
-source /etc/profile.d/bash_completion.sh
+# Use bash-completion, if available
+[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && . /usr/share/bash-completion/bash_completion
 
 if [[ -t 0 && $- = *i* ]]; then
 	stty -ixon
 fi
+
+eval "$(starship init bash)"
 #-------------------------------END OF DEFAULT------------------------------------------------------------
