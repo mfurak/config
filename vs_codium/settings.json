@@ -1,34 +1,17 @@
 {
-  "telemetry.enableCrashReporter": false,
-  "telemetry.enableTelemetry": false,
-  "code-runner.enableAppInsights": false,
-  "workbench.colorTheme": "Atom One Light",
-  "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorCustomizations": {},
-  "window.zoomLevel": 0,
-  "editor.wordWrap": "on",
-  "workbench.editor.enablePreviewFromQuickOpen": false,
-  "editor.formatOnSave": true,
-  "editor.tabSize": 2,
-  "editor.insertSpaces": true,
-  "workbench.statusBar.feedback.visible": false,
-  "gitlens.advanced.messages": {
-    "suppressShowKeyBindingsNotice": true
-  },
-  "jshint.options": {
-    "esversion": 6
-  },
-  "trailing-spaces.trimOnSave": true,
-  "workbench.startupEditor": "newUntitledFile",
-  "editor.fontFamily": " 'Fira Code',Consolas, 'Courier New', monospace",
-  "editor.fontLigatures": true,
-  "files.associations": {
-    "*.js": "javascriptreact"
-  },
-  "editor.fontSize": 13,
-  "extensions.showRecommendationsOnlyOnDemand": true,
-  "extensions.ignoreRecommendations": true,
-  "yaml.format.enable": true,
-  "material-icon-theme.folders.color": "#90a4ae",
-  "editor.largeFileOptimizations": false
+    "telemetry.telemetryLevel": "off",
+    "code-runner.enableAppInsights": false,
+    "update.mode": "none",
+    "workbench.startupEditor": "none",
+    "findJump.jumpChars": "jfdkslawibceghlmnopqrtuvxyzJFDKSLABCEGHILMNOPQRTUVWXYZ",
+    "findJump.positionAbsolute": true,
+    "workbench.colorTheme": "Atom One Light",
+    "security.workspace.trust.enabled": false,
+    "editor.cursorStyle": "block-outline",
+    "redhat.telemetry.enabled": false,
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "editor.wordWrap": "on",
+    "workbench.editor.enablePreview": false,
 }
