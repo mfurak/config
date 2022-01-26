@@ -14,4 +14,5 @@
     },
     "editor.wordWrap": "on",
     "workbench.editor.enablePreview": false,
+    "explorer.openEditors.visible": 0,
 }
