@@ -4,10 +4,8 @@ EditorConfig.EditorConfig
 esbenp.prettier-vscode
 matklad.rust-analyzer
 ms-python.python
-ms-toolsai.jupyter
 redhat.vscode-yaml
 stylelint.vscode-stylelint
 tamasfe.even-better-toml
 tuttieee.emacs-mcx
-usernamehw.find-jump
 zhuangtongfa.material-theme
