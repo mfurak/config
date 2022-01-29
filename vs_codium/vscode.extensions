@@ -1,5 +1,6 @@
 akamud.vscode-theme-onelight
 dbaeumer.vscode-eslint
+eamodio.gitlens
 EditorConfig.EditorConfig
 esbenp.prettier-vscode
 matklad.rust-analyzer
@@ -8,4 +9,5 @@ redhat.vscode-yaml
 stylelint.vscode-stylelint
 tamasfe.even-better-toml
 tuttieee.emacs-mcx
+usernamehw.find-jump
 zhuangtongfa.material-theme

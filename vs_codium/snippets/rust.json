@@ -6,12 +6,12 @@
 	// Example:
 	"Format output": {
 		"prefix": "f",
-		"body": "format!(\"{}\", $1);",
+		"body": "format!(\"$2:{}\", $1);",
 		"description": "Format output"
 	},
 	"Print output to console": {
 		"prefix": "p",
-		"body": "println!(\"{}\", $1);",
+		"body": "println!(\"$2:{}\", $1);",
 		"description": "Print output to console"
 	}
 }
