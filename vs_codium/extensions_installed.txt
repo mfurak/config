@@ -3,11 +3,13 @@ dbaeumer.vscode-eslint
 eamodio.gitlens
 EditorConfig.EditorConfig
 esbenp.prettier-vscode
+foxundermoon.shell-format
 matklad.rust-analyzer
 ms-python.python
 redhat.vscode-yaml
 stylelint.vscode-stylelint
 tamasfe.even-better-toml
 tuttieee.emacs-mcx
+tuxtina.json2yaml
 usernamehw.find-jump
 zhuangtongfa.material-theme
