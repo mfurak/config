@@ -1,6 +1,7 @@
 #! /usr/bin/bash
 MY_DIR="./"
-EXTENSION_LIST="vscode.extensions"
+INSTALLED_EXTENSIONS=$MY_DIR"extensions_installed.txt"
+UNINSTALLED_EXTENSIONS=$MY_DIR"extensions_uninstalled.txt"
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     VS_PATH=~/.config/VSCodium/User;
