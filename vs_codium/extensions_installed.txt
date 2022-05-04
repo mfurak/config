@@ -10,6 +10,6 @@ redhat.vscode-yaml
 stylelint.vscode-stylelint
 tamasfe.even-better-toml
 tuttieee.emacs-mcx
-tuxtina.json2yaml
 usernamehw.find-jump
+wayou.vscode-todo-highlight
 zhuangtongfa.material-theme
