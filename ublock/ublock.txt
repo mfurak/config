@@ -1,5 +1,5 @@
 {
-  "timeStamp": 1651648081000,
+  "timeStamp": 1655333336374,
   "version": "1.42.4",
   "userSettings": {
     "advancedUserEnabled": true,
@@ -12,6 +12,7 @@
       "https://www.fanboy.co.nz/enhancedstats.txt"
     ],
     "popupPanelSections": 31,
+    "suspendUntilListsAreLoaded": true,
     "webrtcIPAddressHidden": true
   },
   "selectedFilterLists": [
@@ -75,10 +76,10 @@
     "THA-0",
     "TUR-0",
     "VIE-1",
+    "https://winhelp2002.mvps.org/hosts.txt",
     "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt",
     "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/ClearURLs%20for%20uBo/clear_urls_uboified.txt",
     "https://www.fanboy.co.nz/enhancedstats.txt",
-    "https://winhelp2002.mvps.org/hosts.txt",
     "https://raw.githubusercontent.com/Spam404/lists/master/adblock-list.txt"
   ],
   "hiddenSettings": {},
