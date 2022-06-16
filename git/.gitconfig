@@ -18,4 +18,12 @@
 	prune = true
 [user]
 	useConfigOnly = true
+[difftool]
+	prompt = false
+	keepBackup = false
+	trustExitCode = false
+[mergetool]
+	prompt = false
+	keepBackup = false
+	keepTemporaries = false
 ############################## END OF DEFAULT #################################
