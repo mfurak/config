@@ -30,7 +30,6 @@ function color_test {
     echo;
   done
   echo
-  echo "hello"
 }
 echo "Color Test:"
 color_test
