@@ -49,6 +49,7 @@ alias gcob='gco -b $1'
 
 alias grs='git reset $@'
 alias grsf='git reset --hard $@'
+alias grsh='git_smart_reset'
 
 alias grr='git restore $@'
 alias grrs='git restore --staged $@'
@@ -70,7 +71,7 @@ alias gmt='git mergetool'
 
 alias gd='git diff'
 alias gdc='git diff --cached'
-alias gds='git_smart_diff'
+alias gdh='git_smart_diff'
 alias gdt='git difftool'
 
 alias grb='git rebase $@'
@@ -91,8 +92,10 @@ alias gcnb='gcrb && gclb'
 
 git_smart_rebase() { git rebase -i HEAD~$1; }
 git_smart_diff() { git show HEAD~$1; }
+git_smart_reset() { git reset HEAD~$1; }
 git_delete_stale_remote_branches() { gf && git branch -vv | awk '/^[^\*].*\[origin\/.*gone\]/ {print $1}' | xargs -r git branch -D; }
 git_delete_stale_local_branches() { gf && git branch -vv | awk '!/^\*|\[origin\// {print $1}' | xargs -r git branch -D; }
+
 
 # Use bash-completion, if available
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && . /usr/share/bash-completion/bash_completion
