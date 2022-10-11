@@ -1,15 +1,20 @@
 {
-  "timeStamp": 1655333336374,
-  "version": "1.42.4",
+  "timeStamp": 1665511510841,
+  "version": "1.44.2",
   "userSettings": {
     "advancedUserEnabled": true,
-    "externalLists": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/ClearURLs%20for%20uBo/clear_urls_uboified.txt\nhttps://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt\nhttps://raw.githubusercontent.com/Spam404/lists/master/adblock-list.txt\nhttps://winhelp2002.mvps.org/hosts.txt\nhttps://www.fanboy.co.nz/enhancedstats.txt",
+    "externalLists": "https://adaway.org/hosts.txt\nhttps://gitlab.com/DandelionSprout/bypass-paywalls-clean-filters/-/raw/main/bpc-paywall-filter.txt\nhttps://gitlab.com/magnolia1234/bypass-paywalls-clean-filters/-/raw/main/bpc-paywall-filter.txt\nhttps://raw.githubusercontent.com/0xspade/NSABlockList/main/l.txt\nhttps://raw.githubusercontent.com/DandelionSprout/adfilt/master/ClearURLs%20for%20uBo/clear_urls_uboified.txt\nhttps://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt\nhttps://raw.githubusercontent.com/Spam404/lists/master/adblock-list.txt\nhttps://winhelp2002.mvps.org/hosts.txt\nhttps://www.fanboy.co.nz/enhancedstats.txt\nhttps://www.i-dont-care-about-cookies.eu/abp/",
     "importedLists": [
+      "https://adaway.org/hosts.txt",
+      "https://gitlab.com/DandelionSprout/bypass-paywalls-clean-filters/-/raw/main/bpc-paywall-filter.txt",
+      "https://gitlab.com/magnolia1234/bypass-paywalls-clean-filters/-/raw/main/bpc-paywall-filter.txt",
+      "https://raw.githubusercontent.com/0xspade/NSABlockList/main/l.txt",
       "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/ClearURLs%20for%20uBo/clear_urls_uboified.txt",
       "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt",
       "https://raw.githubusercontent.com/Spam404/lists/master/adblock-list.txt",
       "https://winhelp2002.mvps.org/hosts.txt",
-      "https://www.fanboy.co.nz/enhancedstats.txt"
+      "https://www.fanboy.co.nz/enhancedstats.txt",
+      "https://www.i-dont-care-about-cookies.eu/abp/"
     ],
     "popupPanelSections": 31,
     "suspendUntilListsAreLoaded": true,
@@ -76,10 +81,15 @@
     "THA-0",
     "TUR-0",
     "VIE-1",
+    "https://adaway.org/hosts.txt",
+    "https://raw.githubusercontent.com/0xspade/NSABlockList/main/l.txt",
     "https://winhelp2002.mvps.org/hosts.txt",
     "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt",
+    "https://gitlab.com/DandelionSprout/bypass-paywalls-clean-filters/-/raw/main/bpc-paywall-filter.txt",
+    "https://gitlab.com/magnolia1234/bypass-paywalls-clean-filters/-/raw/main/bpc-paywall-filter.txt",
     "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/ClearURLs%20for%20uBo/clear_urls_uboified.txt",
     "https://www.fanboy.co.nz/enhancedstats.txt",
+    "https://www.i-dont-care-about-cookies.eu/abp/",
     "https://raw.githubusercontent.com/Spam404/lists/master/adblock-list.txt"
   ],
   "hiddenSettings": {},
