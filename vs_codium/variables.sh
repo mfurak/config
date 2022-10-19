@@ -8,4 +8,3 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 else
     VS_PATH=$APPDATA/VSCodium/User;
 fi
-

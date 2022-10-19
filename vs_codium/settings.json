@@ -5,7 +5,6 @@
     "workbench.startupEditor": "none",
     "findJump.jumpChars": "jfdkslawibceghlmnopqrtuvxyzJFDKSLABCEGHILMNOPQRTUVWXYZ",
     "findJump.positionAbsolute": true,
-    "workbench.colorTheme": "Atom One Light",
     "security.workspace.trust.enabled": false,
     "editor.cursorStyle": "block-outline",
     "redhat.telemetry.enabled": false,
@@ -30,4 +29,9 @@
     "[scss]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "workbench.colorTheme": "Atom One Light",
+    "typescript.updateImportsOnFileMove.enabled": "always",
 }
