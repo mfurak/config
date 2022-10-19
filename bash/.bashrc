@@ -21,81 +21,85 @@ alias drmi='docker rmi $(docker images -q)'
 ##Git
 alias gs='git status'
 
-alias gcl='git clone $1'
+alias gcl='git clone $@'
 
-alias gp='git push'
+alias gp='git push $@'
 #create a new branch on origin with the name of the current branch and push the new branch
-alias gpn='git push -u'
-alias gpf='git push --force-with-lease'
+alias gpn='gp -u'
+alias gpf='gp --force-with-lease'
 
-alias gplm='git pull origin master'
-alias gprm='git pull --rebase origin master'
 alias gpl='git pull $@'
+alias gplm='gpl origin master'
+alias gpr='gpl --rebase'
+alias gprm='gpl --rebase origin master'
 
 alias gf='git fetch'
 
-alias gb='git branch'
-alias gbd='git branch -d $@'
-alias gbdf='git branch -D $@'
+alias gb='git branch $@'
+alias gbd='gb -d $1'
+alias gbdf='gb -D $1'
 
-alias gl='git log'
-alias gll='git log --oneline --graph --decorate  $@'
-alias glla='git log --oneline --all --graph --decorate $@'
-alias gllf='git log --oneline --decorate --name-status $@'
+alias gl='git log $@'
+alias gll='gl --oneline --graph --decorate $1'
+alias glla='gl --oneline --all --graph --decorate $1'
+alias gllf='gl --oneline --decorate --name-status $1'
 
-alias gco='git checkout $1'
+alias gco='git checkout $@'
 alias gcom='gco master'
 alias gcob='gco -b $1'
 
 alias grs='git reset $@'
-alias grsf='git reset --hard $@'
+alias grsf='grs --hard $1'
 alias grsh='git_smart_reset'
 
 alias grr='git restore $@'
-alias grrs='git restore --staged $@'
+alias grrs='grr --staged $1'
 
 alias ga='git add $@'
+alias gaa='ga .'
 
-alias gc='git commit'
-alias gcm='git commit -m $@'
-alias gca='git commit --amend $@'
+alias gc='git commit $@'
+alias gcm='gc -m $1'
+alias gca='gc --amend'
 
-alias gam='git add . && git commit -m $@'
+alias gam='gaa && gcm'
 
 alias gcp='git cherry-pick $@'
-alias gcpn='git cherry-pick -n $@'
-alias gcpa='git cherry-pick --abort'
-alias gcpc='git cherry-pick --continue'
+alias gcpn='gcp -n $@'
+alias gcpa='gcp --abort'
+alias gcpc='gcp --continue'
 
 alias gmt='git mergetool'
 
 alias gd='git diff'
-alias gdc='git diff --cached'
+alias gdc='gd --cached'
 alias gdh='git_smart_diff'
 alias gdt='git difftool'
 
 alias grb='git rebase $@'
-alias gri='git rebase -i $@'
+alias gri='grb -i $1'
 alias grih="git_smart_rebase"
-alias grc='git rebase --continue'
-alias gra='git rebase --abort'
+alias grc='grb --continue'
+alias gra='grb --abort'
 
 alias gst='git stash'
-alias gsta='git stash apply'
-alias gstc='git stash clear'
+alias gsta='gst apply'
+alias gstc='gst clear'
 
-alias gcn='git clean -f'
-alias gcnd='git clean -fd'
+alias gcn='git clean $@'
+alias gcnf='gcn -f'
+alias gcnd='gcn -fd'
 alias gcrb='git_delete_stale_remote_branches'
 alias gclb='git_delete_stale_local_branches'
 alias gcnb='gcrb && gclb'
 
-git_smart_rebase() { git rebase -i HEAD~$1; }
-git_smart_diff() { git show HEAD~$1; }
-git_smart_reset() { git reset HEAD~$1; }
-git_delete_stale_remote_branches() { gf && git branch -vv | awk '/^[^\*].*\[origin\/.*gone\]/ {print $1}' | xargs -r git branch -D; }
-git_delete_stale_local_branches() { gf && git branch -vv | awk '!/^\*|\[origin\// {print $1}' | xargs -r git branch -D; }
+alias gsh='git show $@'
 
+git_smart_rebase() { gri HEAD~$1; }
+git_smart_diff() { gsh HEAD~$1; }
+git_smart_reset() { grs HEAD~$1; }
+git_delete_stale_remote_branches() { gf && gb -vv | awk '/^[^\*].*\[origin\/.*gone\]/ {print $1}' | xargs -r gbdf; }
+git_delete_stale_local_branches() { gf && gb -vv | awk '!/^\*|\[origin\// {print $1}' | xargs -r gbdf; }
 
 # Use bash-completion, if available
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && . /usr/share/bash-completion/bash_completion
