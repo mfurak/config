@@ -95,9 +95,9 @@ alias gcnb='gcrb && gclb'
 
 alias gsh='git show $@'
 
-git_smart_rebase() { gri HEAD~$1; }
-git_smart_diff() { gsh HEAD~$1; }
-git_smart_reset() { grs HEAD~$1; }
+git_smart_rebase() { git rebase -i HEAD~$1; }
+git_smart_diff() { git show HEAD~$1; }
+git_smart_reset() { git reset HEAD~$1; }
 git_delete_stale_remote_branches() { gf && gb -vv | awk '/^[^\*].*\[origin\/.*gone\]/ {print $1}' | xargs -r gbdf; }
 git_delete_stale_local_branches() { gf && gb -vv | awk '!/^\*|\[origin\// {print $1}' | xargs -r gbdf; }
 
