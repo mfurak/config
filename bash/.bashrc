@@ -15,9 +15,7 @@ alias c='codium .'
 alias r='rider $(find ./ -name *.sln -print -quit) &>/dev/null &'
 
 ## Python
-alias jn='jupyter notebook'
 alias py='python'
-alias psh='pipenv shell'
 
 ## Docker
 alias drm='docker rm $(docker ps -a -q)'
@@ -29,6 +27,7 @@ alias gs='git status'
 alias gcl='git clone $@'
 
 alias gp='git push $@'
+
 #create a new branch on origin with the name of the current branch and push the new branch
 alias gpn='gp -u'
 alias gpf='gp --force-with-lease'
