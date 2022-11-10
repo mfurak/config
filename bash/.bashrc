@@ -3,6 +3,11 @@
 [[ $- != *i* ]] && return
 [ -z "$PS1" ] && return
 
+# disable software flow control (Ctrl+s suspends the session)
+if [[ -t 0 && $- = *i* ]]; then
+	stty -ixon
+fi
+
 ### ALIASES
 ## General
 alias ~='cd ~'
