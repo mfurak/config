@@ -69,7 +69,8 @@ alias gaa='ga .'
 
 alias gc='git commit $@'
 alias gcm='gc -m $1'
-alias gca='gc --amend'
+alias gcam='gc --amend --no-edit'
+alias gcam='gc --amend'
 
 alias gam='gaa && gcm'
 
