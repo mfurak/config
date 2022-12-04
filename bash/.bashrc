@@ -9,6 +9,9 @@ if [[ -t 0 && $- = *i* ]]; then
 fi
 
 ### ALIASES
+# A trailing space causes the next word to be checked for alias substitution
+alias xargs='xargs '
+
 ## General
 alias ~='cd ~'
 alias ..='cd ../'
