@@ -1,11 +1,12 @@
 {
-  "timeStamp": 1665511510841,
-  "version": "1.44.2",
+  "timeStamp": 1679232332091,
+  "version": "1.47.4",
   "userSettings": {
     "advancedUserEnabled": true,
-    "externalLists": "https://adaway.org/hosts.txt\nhttps://gitlab.com/DandelionSprout/bypass-paywalls-clean-filters/-/raw/main/bpc-paywall-filter.txt\nhttps://gitlab.com/magnolia1234/bypass-paywalls-clean-filters/-/raw/main/bpc-paywall-filter.txt\nhttps://raw.githubusercontent.com/0xspade/NSABlockList/main/l.txt\nhttps://raw.githubusercontent.com/DandelionSprout/adfilt/master/ClearURLs%20for%20uBo/clear_urls_uboified.txt\nhttps://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt\nhttps://raw.githubusercontent.com/Spam404/lists/master/adblock-list.txt\nhttps://winhelp2002.mvps.org/hosts.txt\nhttps://www.fanboy.co.nz/enhancedstats.txt\nhttps://www.i-dont-care-about-cookies.eu/abp/",
+    "externalLists": "https://adaway.org/hosts.txt\nhttps://filters.adtidy.org/extension/ublock/filters/3.txt\nhttps://gitlab.com/DandelionSprout/bypass-paywalls-clean-filters/-/raw/main/bpc-paywall-filter.txt\nhttps://gitlab.com/magnolia1234/bypass-paywalls-clean-filters/-/raw/main/bpc-paywall-filter.txt\nhttps://raw.githubusercontent.com/0xspade/NSABlockList/main/l.txt\nhttps://raw.githubusercontent.com/DandelionSprout/adfilt/master/ClearURLs%20for%20uBo/clear_urls_uboified.txt\nhttps://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt\nhttps://raw.githubusercontent.com/Spam404/lists/master/adblock-list.txt\nhttps://winhelp2002.mvps.org/hosts.txt\nhttps://www.fanboy.co.nz/enhancedstats.txt\nhttps://www.i-dont-care-about-cookies.eu/abp/",
     "importedLists": [
       "https://adaway.org/hosts.txt",
+      "https://filters.adtidy.org/extension/ublock/filters/3.txt",
       "https://gitlab.com/DandelionSprout/bypass-paywalls-clean-filters/-/raw/main/bpc-paywall-filter.txt",
       "https://gitlab.com/magnolia1234/bypass-paywalls-clean-filters/-/raw/main/bpc-paywall-filter.txt",
       "https://raw.githubusercontent.com/0xspade/NSABlockList/main/l.txt",
@@ -17,7 +18,6 @@
       "https://www.i-dont-care-about-cookies.eu/abp/"
     ],
     "popupPanelSections": 31,
-    "suspendUntilListsAreLoaded": true,
     "webrtcIPAddressHidden": true
   },
   "selectedFilterLists": [
@@ -31,7 +31,6 @@
     "adguard-generic",
     "adguard-mobile",
     "easylist",
-    "adguard-spyware",
     "adguard-spyware-url",
     "block-lan",
     "easyprivacy",
@@ -68,6 +67,7 @@
     "KOR-1",
     "LTU-0",
     "LVA-0",
+    "MKD-0",
     "NLD-0",
     "NOR-0",
     "POL-0",
@@ -85,6 +85,7 @@
     "https://raw.githubusercontent.com/0xspade/NSABlockList/main/l.txt",
     "https://winhelp2002.mvps.org/hosts.txt",
     "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt",
+    "https://filters.adtidy.org/extension/ublock/filters/3.txt",
     "https://gitlab.com/DandelionSprout/bypass-paywalls-clean-filters/-/raw/main/bpc-paywall-filter.txt",
     "https://gitlab.com/magnolia1234/bypass-paywalls-clean-filters/-/raw/main/bpc-paywall-filter.txt",
     "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/ClearURLs%20for%20uBo/clear_urls_uboified.txt",
