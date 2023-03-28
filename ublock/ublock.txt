@@ -1,6 +1,6 @@
 {
-  "timeStamp": 1679232332091,
-  "version": "1.47.4",
+  "timeStamp": 1680201465254,
+  "version": "1.48.0",
   "userSettings": {
     "advancedUserEnabled": true,
     "externalLists": "https://adaway.org/hosts.txt\nhttps://filters.adtidy.org/extension/ublock/filters/3.txt\nhttps://gitlab.com/DandelionSprout/bypass-paywalls-clean-filters/-/raw/main/bpc-paywall-filter.txt\nhttps://gitlab.com/magnolia1234/bypass-paywalls-clean-filters/-/raw/main/bpc-paywall-filter.txt\nhttps://raw.githubusercontent.com/0xspade/NSABlockList/main/l.txt\nhttps://raw.githubusercontent.com/DandelionSprout/adfilt/master/ClearURLs%20for%20uBo/clear_urls_uboified.txt\nhttps://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt\nhttps://raw.githubusercontent.com/Spam404/lists/master/adblock-list.txt\nhttps://winhelp2002.mvps.org/hosts.txt\nhttps://www.fanboy.co.nz/enhancedstats.txt\nhttps://www.i-dont-care-about-cookies.eu/abp/",
@@ -18,6 +18,7 @@
       "https://www.i-dont-care-about-cookies.eu/abp/"
     ],
     "popupPanelSections": 31,
+    "suspendUntilListsAreLoaded": true,
     "webrtcIPAddressHidden": true
   },
   "selectedFilterLists": [
@@ -56,6 +57,7 @@
     "FIN-0",
     "FRA-0",
     "GRC-0",
+    "HRV-0",
     "HUN-0",
     "IDN-0",
     "IND-0",
