@@ -4,9 +4,9 @@ eamodio.gitlens
 EditorConfig.EditorConfig
 esbenp.prettier-vscode
 foxundermoon.shell-format
-matklad.rust-analyzer
 ms-python.python
 redhat.vscode-yaml
+rust-lang.rust-analyzer
 stylelint.vscode-stylelint
 tamasfe.even-better-toml
 tuttieee.emacs-mcx

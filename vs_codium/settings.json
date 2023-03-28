@@ -34,4 +34,7 @@
     },
     "workbench.colorTheme": "Atom One Light",
     "typescript.updateImportsOnFileMove.enabled": "always",
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
 }
