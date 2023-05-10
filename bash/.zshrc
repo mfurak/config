@@ -1,3 +1,4 @@
+#-------------------------------DEFAULT-------------------------------------------------------------------
 # ignore case while completing
 unsetopt BEEP
 
@@ -5,7 +6,8 @@ unsetopt BEEP
 unsetopt CASE_GLOB
 
 # import shell aliases
-source ~/aliases/*.shell_aliases 
+source ~/.aliases/*.shell_aliases
 
 # starship init
 eval "$(starship init zsh)"
+#-------------------------------END OF DEFAULT------------------------------------------------------------
