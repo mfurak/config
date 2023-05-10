@@ -1,5 +1,5 @@
-# Ignore case while completing
+# ignore case while completing
 set completion-ignore-case on
 
-# Turn off the default beep
+# turn off the default beep
 set bell-style none
