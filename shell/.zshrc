@@ -1,9 +1,11 @@
 #-------------------------------DEFAULT-------------------------------------------------------------------
-# ignore case while completing
+# don't beep the terminal
 unsetopt BEEP
 
-# ignore case while completing
-unsetopt CASE_GLOB
+# case insensitive path-completion
+autoload -Uz +X compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' menu select
 
 # import shell aliases
 for f in ~/.aliases/*.shell_aliases; do source $f; done
