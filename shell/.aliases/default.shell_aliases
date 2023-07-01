@@ -32,10 +32,12 @@ alias gp='git push'
 alias gpn='gp -u'
 alias gpf='gp --force-with-lease'
 
+alias git-main-branch='git symbolic-ref --short HEAD'
+
 alias gpl='git pull'
-alias gplm='gpl origin master'
+alias gplm='gpl origin $(git-main-branch)'
 alias gpr='gpl --rebase'
-alias gprm='gpl --rebase origin master'
+alias gprm='gpr origin $(git-main-branch)'
 
 alias gf='git fetch'
 
