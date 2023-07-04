@@ -1,5 +1,7 @@
 #----------------------------------ARCH-------------------------------------------------------------------
 alias cl='sudo paccache -ruk0 && yes | sudo pacman -Scc && sudo journalctl --vacuum-time=1d'
+# Every run of pacman-mirrors requires you to syncronize your database and update your system
+alias speed='sudo pacman-mirrors --fasttrack && sudo pacman -Syu'
 alias up='sudo pacman -Syu'
 alias e='dolphin .'
 #----------------------------------END OF ARCH------------------------------------------------------------
