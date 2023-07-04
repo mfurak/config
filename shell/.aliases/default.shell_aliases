@@ -11,7 +11,6 @@ alias ls='exa'
 alias ll='ls -lah'
 alias emacs='emacs -nw'
 alias c='codium .'
-alias r='rider $(find ./ -name *.sln -print -quit) &>/dev/null &'
 alias vim='nvim'
 
 ## Python
@@ -20,91 +19,4 @@ alias py='python'
 ## Docker
 alias drm='docker rm $(docker ps -a -q)'
 alias drmi='docker rmi $(docker images -q)'
-
-##Git
-alias gs='git status'
-
-alias gcl='git clone'
-
-alias gp='git push'
-
-#create a new branch on origin with the name of the current branch and push the new branch
-alias gpn='gp -u'
-alias gpf='gp --force-with-lease'
-
-alias git-main-branch='git symbolic-ref --short HEAD'
-
-alias gpl='git pull'
-alias gplm='gpl origin $(git-main-branch)'
-alias gpr='gpl --rebase'
-alias gprm='gpr origin $(git-main-branch)'
-
-alias gf='git fetch'
-
-alias gb='git branch'
-alias gbd='gb -d'
-alias gbdf='gb -D'
-
-alias gl='git log'
-alias gll='gl --oneline --graph --decorate'
-alias glla='gl --oneline --all --graph --decorate'
-alias gllf='gl --oneline --decorate --name-status'
-
-alias gco='git checkout'
-alias gcom='gco master'
-alias gcob='gco -b'
-
-alias grs='git reset'
-alias grsf='grs --hard'
-alias grsh='git_smart_reset'
-
-alias grr='git restore'
-alias grrs='grr --staged'
-
-alias ga='git add'
-alias gaa='ga .'
-
-alias gc='git commit'
-alias gcm='gc -m'
-alias gca='gc --amend --no-edit'
-alias gcam='gc --amend'
-
-alias gam='gaa && gcm'
-
-alias gcp='git cherry-pick'
-alias gcpn='gcp -n'
-alias gcpa='gcp --abort'
-alias gcpc='gcp --continue'
-
-alias gmt='git mergetool'
-
-alias gd='git diff'
-alias gdc='gd --cached'
-alias gdh='git_smart_diff'
-alias gdt='git difftool'
-
-alias grb='git rebase'
-alias gri='grb -i'
-alias grih="git_smart_rebase"
-alias grc='grb --continue'
-alias gra='grb --abort'
-
-alias gst='git stash'
-alias gsta='gst apply'
-alias gstc='gst clear'
-
-alias gcn='git clean'
-alias gcnf='gcn -f'
-alias gcnd='gcn -fd'
-alias gcrb='git_delete_stale_remote_branches'
-alias gclb='git_delete_stale_local_branches'
-alias gcnb='gcrb && gclb'
-
-alias gsh='git show'
-
-git_smart_rebase() { git rebase -i HEAD~$1; }
-git_smart_diff() { git show HEAD~$1; }
-git_smart_reset() { git reset HEAD~$1; }
-git_delete_stale_remote_branches() { gf && gb -vv | awk '/^[^\*].*\[origin\/.*gone\]/ {print}' | xargs -r gbdf; }
-git_delete_stale_local_branches() { gf && gb -vv | awk '!/^\*|\[origin\// {print}' | xargs -r gbdf; }
 #-------------------------------END OF DEFAULT------------------------------------------------------------
