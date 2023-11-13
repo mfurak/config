@@ -159,6 +159,7 @@ require('lazy').setup({
     config = function()
       vim.cmd.colorscheme 'onedark'
     end,
+    style = 'light',
   },
 
   {
@@ -217,6 +218,45 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
 
+  -- File system and other tree like structures browser
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+    }
+  },
+
+  -- Navigate your code with search labels
+  {
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    ---@type flash.config
+    opts = {},
+    -- stylua: ignore
+    keys = {
+      { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "flash" },
+      { "s", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "flash treesitter" },
+      { "r", mode = "o", function() require("flash").remote() end, desc = "remote flash" },
+      { "r", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "treesitter search" },
+      { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "toggle flash search" },
+    },
+  },
+
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+        require("nvim-surround").setup({
+            -- Configuration here, or leave empty to use defaults
+        })
+    end
+  },
+
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
@@ -235,16 +275,17 @@ require('lazy').setup({
 -- [[ Setting options ]]
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
-
--- Define a mapping for switching to normal mode with a timeout(in milliseconds)
-vim.api.nvim_set_keymap('i', 'jk', '<Esc>', { noremap = true, silent = true })
-vim.o.timeoutlen = 750
+-- Define a global timeout for all commands(default: 1000)
+vim.o.timeoutlen = 500
 
 -- Set highlight on search
-vim.o.hlsearch = false
+vim.o.hlsearch = true
 
 -- Make line numbers default
 vim.wo.number = true
+
+-- Enable relative line numbers
+vim.wo.relativenumber = true
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
@@ -281,6 +322,9 @@ vim.o.termguicolors = true
 
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
+-- Define a mapping for switching to normal mode with a timeout(in milliseconds)
+vim.keymap.set('i', 'jk', '<Esc>', {noremap = true, silent = true})
+
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 -- Remap for dealing with word wrap
