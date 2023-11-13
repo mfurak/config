@@ -17,8 +17,4 @@ alias v='vim .'
 
 ## Python
 alias py='python'
-
-## Docker
-alias drm='docker rm $(docker ps -a -q)'
-alias drmi='docker rmi $(docker images -q)'
 #-------------------------------END OF DEFAULT------------------------------------------------------------
