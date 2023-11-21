@@ -227,7 +227,17 @@ require('lazy').setup({
       "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
       "MunifTanjim/nui.nvim",
       -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
-    }
+    },
+    config = function ()
+      require("neo-tree").setup({
+       filesystem = {
+          filtered_items = {
+            hide_dotfiles = false,
+            hide_gitignored = false,
+          }
+       }
+      })
+    end
   },
 
   -- Navigate your code with search labels
@@ -275,8 +285,6 @@ require('lazy').setup({
 -- [[ Setting options ]]
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
--- Define a global timeout for all commands(default: 1000)
-vim.o.timeoutlen = 500
 
 -- Set highlight on search
 vim.o.hlsearch = true
@@ -310,7 +318,9 @@ vim.wo.signcolumn = 'yes'
 
 -- Decrease update time
 vim.o.updatetime = 250
-vim.o.timeoutlen = 300
+
+-- Define a global timeout for all commands(default: 1000)
+vim.o.timeoutlen = 500
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
@@ -322,7 +332,7 @@ vim.o.termguicolors = true
 
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
--- Define a mapping for switching to normal mode with a timeout(in milliseconds)
+-- Define a mapping for switching to normal mode
 vim.keymap.set('i', 'jk', '<Esc>', {noremap = true, silent = true})
 
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
