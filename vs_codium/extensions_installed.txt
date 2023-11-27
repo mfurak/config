@@ -4,6 +4,7 @@ eamodio.gitlens
 EditorConfig.EditorConfig
 esbenp.prettier-vscode
 foxundermoon.shell-format
+GitHub.copilot
 ms-python.python
 ms-toolsai.jupyter
 ms-toolsai.jupyter-keymap
