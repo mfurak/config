@@ -1,2 +1,3 @@
 #! /bin/bash
-cp "$HOME"/.config/nvim/init.lua ./
+source ./variables.sh  
+cp "$CONFIG_DIRECTORY/$CONFIG_FILE" ./  
