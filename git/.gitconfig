@@ -8,7 +8,7 @@
 	interactive = auto
 	ui = auto
 [push]
-    default = current
+	default = current
 [rebase]
 	autoSquash = true
 	autoStash = false

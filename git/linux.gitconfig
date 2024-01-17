@@ -1,6 +1,6 @@
 ################################# LINUX #######################################
 [core]
-	editor = emacs -nw
+	editor = nvim
 [merge]
 	tool = kdiff3
 	guitool = kdiff3
