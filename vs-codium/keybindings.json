@@ -56,14 +56,6 @@
         "when": "notebookEditable && !editorTextFocus && activeEditor == 'workbench.editor.notebook'"
     },
     {
-        "key": "alt+j",
-        "command": "findJump.activate"
-    },
-    {
-        "key": "ctrl+;",
-        "command": "-findJump.activate"
-    },
-    {
         "key": "ctrl+x ctrl+s",
         "command": "-workbench.action.files.save",
         "when": "!terminalFocus"
