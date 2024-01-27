@@ -1,7 +1,7 @@
 #! /bin/bash
-MY_DIR="./"
-INSTALLED_EXTENSIONS=$MY_DIR"extensions_installed.txt"
-UNINSTALLED_EXTENSIONS=$MY_DIR"extensions_uninstalled.txt"
+CONFIG_DIRECTORY="~/.config/VSCodium"
+INSTALLED_EXTENSIONS="./extensions_installed.txt"
+UNINSTALLED_EXTENSIONS="./extensions_uninstalled.txt"
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     VS_PATH="$HOME/.config/VSCodium/User"
