@@ -1,0 +1,8 @@
+{
+    "telemetry.telemetryLevel": "off",
+    "workbench.startupEditor": "none",
+    "editor.lineNumbers": "relative",
+    "editor.minimap.enabled": false,
+    "workbench.colorTheme": "Snazzy Light",
+    "explorer.confirmDelete": false
+}
