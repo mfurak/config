@@ -9,11 +9,12 @@
 	ui = auto
 [push]
 	default = current
+	useForceIfIncludes = true
 [rebase]
 	autoSquash = true
 	autoStash = false
 [pull]
-	rebase = false
+	rebase = true
 [fetch]
 	prune = true
 [user]
