@@ -1,21 +1,19 @@
 #-----------------------------------GIT-------------------------------------------------------------------
-##Git
 alias gs='git status'
 
 alias gcl='git clone'
 
 alias gp='git push'
-
-#create a new branch on origin with the name of the current branch and push the new branch
+# create a new branch on origin with the name of the current branch and push the new branch
 alias gpn='gp -u'
+# --force-if-includes is used by default in .gitconfig
 alias gpf='gp --force-with-lease'
 
 alias git-main-branch='git symbolic-ref --short HEAD'
 
+# --rebase is used by default in .gitconfig
 alias gpl='git pull'
 alias gplm='gpl origin $(git-main-branch)'
-alias gpr='gpl --rebase'
-alias gprm='gpr origin $(git-main-branch)'
 
 alias gf='git fetch'
 
