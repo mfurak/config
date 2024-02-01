@@ -47,4 +47,16 @@
         "*.shell_aliases": "shellscript"
     },
     "editor.lineNumbers": "relative",
+    "vim.cursorStylePerMode.insert": "line",
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "k"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
 }
