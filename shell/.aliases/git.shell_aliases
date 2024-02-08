@@ -27,7 +27,7 @@ alias glla='gl --oneline --all --graph --decorate'
 alias gllf='gl --oneline --decorate --name-status'
 
 alias gco='git checkout'
-alias gcom='gco master'
+alias gcom='gco $(git-main-branch)'
 alias gcob='gco -b'
 
 alias grs='git reset'
