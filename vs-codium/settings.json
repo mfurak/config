@@ -1,52 +1,28 @@
 {
     "telemetry.telemetryLevel": "off",
-    "code-runner.enableAppInsights": false,
     "update.mode": "none",
     "workbench.startupEditor": "none",
     "findJump.jumpChars": "jfdkslawibceghlmnopqrtuvxyzJFDKSLABCEGHILMNOPQRTUVWXYZ",
     "findJump.positionAbsolute": true,
     "security.workspace.trust.enabled": false,
     "editor.cursorStyle": "block-outline",
-    "redhat.telemetry.enabled": false,
-    "[jsonc]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    },
     "editor.wordWrap": "on",
     "workbench.editor.enablePreview": false,
     "explorer.openEditors.visible": 0,
-    "gitlens.showWelcomeOnInstall": false,
-    "gitlens.showWhatsNewAfterUpgrades": false,
     "workbench.enableExperiments": false,
     "workbench.settings.enableNaturalLanguageSearch": false,
     "update.showReleaseNotes": false,
     "json.schemaDownload.enable": false,
     "npm.fetchOnlinePackageInfo": false,
     "editor.minimap.enabled": false,
-    "[json]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    },
     "diffEditor.ignoreTrimWhitespace": false,
-    "[scss]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[yaml]": {
-        "editor.defaultFormatter": "redhat.vscode-yaml"
-    },
     "workbench.colorTheme": "Atom One Light",
     "typescript.updateImportsOnFileMove.enabled": "always",
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
     "git.confirmSync": false,
-    "files.associations": {
-        "*.shell_aliases": "shellscript"
-    },
     "editor.lineNumbers": "relative",
+    "extensions.ignoreRecommendations": true,
     "vim.cursorStylePerMode.insert": "line",
     "vim.insertModeKeyBindings": [
         {
