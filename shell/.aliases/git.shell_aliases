@@ -81,6 +81,7 @@ git_main_branch() { git symbolic-ref --short refs/remotes/origin/HEAD | sed 's@^
 git_smart_rebase() { git rebase -i HEAD~$1; }
 git_smart_diff() { git show HEAD~$1; }
 git_smart_reset() { git reset HEAD~$1; }
-git_delete_stale_remote_branches() { gf && gb -vv | awk '/^[^\*].*\[origin\/.*gone\]/ {print}' | xargs -r gbdf; }
-git_delete_stale_local_branches() { gf && gb -vv | awk '!/^\*|\[origin\// {print}' | xargs -r gbdf; }
+git_force_delete_branches() { git branch -D $@; }
+git_delete_stale_remote_branches() { gf && gb -vv | sed '/^*/d' | awk '/\[origin\/.*gone/ {print $1}' | xargs -r git branch -D; }
+git_delete_stale_local_branches() { gf && gb -vv | sed '/^*/d' | awk '!/\[origin\// {print $1}' | xargs -r git branch -D; }
 #-----------------------------------END OF GIT------------------------------------------------------------
