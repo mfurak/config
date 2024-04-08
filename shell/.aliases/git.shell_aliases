@@ -21,7 +21,7 @@ alias gbd='gb -d'
 alias gbdf='gb -D'
 
 alias gl='git log'
-alias gls='gll -n 25'
+alias gls='gll -n 15'
 alias gll='gl --oneline --graph --decorate'
 alias glla='gl --oneline --all --graph --decorate'
 alias gllf='gl --oneline --decorate --name-status'
