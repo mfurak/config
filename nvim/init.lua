@@ -254,23 +254,6 @@ require("lazy").setup({
     end,
   },
 
-  -- Copilot
-  {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "insertenter",
-    config = function()
-      require("copilot").setup({})
-    end,
-  },
-
-  {
-    "zbirenbaum/copilot-cmp",
-    config = function()
-      require("copilot_cmp").setup()
-    end,
-  },
-
   -- [[ Configure autoformatting ]]
   -- Use your language server to automatically format your code on save.
   -- Adds additional commands as well to manage the behavior
@@ -617,12 +600,6 @@ require("onedark").setup({
 })
 require("onedark").load()
 
--- [[ Configure Copilot ]]
-require("copilot").setup({
-  suggestion = { enabled = false },
-  panel = { enabled = false },
-})
-
 -- [[ Configure LSP ]]
 --  This function gets run when an LSP connects to a particular buffer.
 local on_attach = function(_, bufnr)
@@ -740,15 +717,6 @@ local luasnip = require("luasnip")
 require("luasnip.loaders.from_vscode").lazy_load()
 luasnip.config.setup({})
 
--- Copilot tab completion helper method
-local has_words_before = function()
-  if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then
-    return false
-  end
-  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0 and vim.api.nvim_buf_get_text(0, line - 1, 0, line - 1, col, {})[1]:match("^%s*$") == nil
-end
-
 cmp.setup({
   snippet = {
     expand = function(args)
@@ -797,8 +765,6 @@ cmp.setup({
   sources = {
     { name = "nvim_lsp" },
     { name = "luasnip" },
-    -- Copilot Source
-    { name = "copilot" },
   },
 })
 
