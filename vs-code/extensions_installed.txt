@@ -1,5 +1,0 @@
-foxundermoon.shell-format
-GitHub.copilot
-GitHub.copilot-chat
-loilo.snazzy-light
-vscodevim.vim
