@@ -16,23 +16,17 @@
     "diagnostics": false,
     "metrics": false
   },
-  "features": { "copilot": false, "inline_completion_provider": "none" },
+  "features": {
+    "copilot": false,
+    "inline_completion_provider": "none"
+  },
   "vim_mode": true,
   "relative_line_numbers": true,
   "soft_wrap": "editor_width",
   "remove_trailing_whitespace_on_save": true,
-  "ui_font_family": "FiraCode Nerd Font Mono",
-  "ui_font_size": 13,
-  "buffer_font_family": "FiraCode Nerd Font Mono",
-  "buffer_font_size": 13,
-  "autosave": "on_focus_change",
-  "lsp": {
-    "pyright": {
-      "settings": {
-        "python": {
-          "pythonPath": ".venv/bin/python"
-        }
-      }
-    }
-  }
+  "ui_font_family": "JetBrains Mono",
+  "ui_font_size": 14,
+  "buffer_font_family": "JetBrains Mono",
+  "buffer_font_size": 14,
+  "autosave": "on_focus_change"
 }
