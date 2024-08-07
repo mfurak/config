@@ -1,0 +1,20 @@
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-s": "workspace::SaveAll"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "g r": "editor::FindAllReferences"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "j k": "vim::NormalBefore"
+    }
+  }
+]
