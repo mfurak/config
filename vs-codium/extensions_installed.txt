@@ -1,7 +1,0 @@
-akamud.vscode-theme-onelight
-EditorConfig.EditorConfig
-foxundermoon.shell-format
-ms-python.python
-rust-lang.rust-analyzer
-vscodevim.vim
-wayou.vscode-todo-highlight
