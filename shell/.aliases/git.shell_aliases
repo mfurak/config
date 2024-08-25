@@ -29,6 +29,7 @@ alias gllf='gl --oneline --decorate --name-status'
 alias gco='git checkout'
 alias gcom='gco $(git_main_branch)'
 alias gcob='gco -b'
+alias gcoo='gco -'
 
 alias grs='git reset'
 alias grsf='grs --hard'
