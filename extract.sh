@@ -3,7 +3,6 @@ source ./variables.sh
 
 # Config
 if [ -n "$CONFIG_DIRECTORY" ]; then
-  CONFIG_FILES=($(find . -type f ! -name "install.sh" ! -name "extract.sh" ! -name "variables.sh" ! -name "*.shell_aliases" -maxdepth 1))
   for CONFIG_FILE in "${CONFIG_FILES[@]}"; do
     cp "$CONFIG_DIRECTORY/$CONFIG_FILE" ./
     echo "Copied $CONFIG_DIRECTORY/$CONFIG_FILE"
