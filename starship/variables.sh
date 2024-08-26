@@ -1,3 +1,3 @@
 #! /bin/bash
-export CONFIG_DIRECTORY="$HOME/.config"
-export CONFIG_FILE="starship.toml"
+CONFIG_DIRECTORY="$HOME/.config"
+CONFIG_FILE="starship.toml"

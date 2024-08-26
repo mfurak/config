@@ -1,3 +1,3 @@
 #! /bin/bash
 # Aliases
-export ALIAS_FILE="eza.shell_aliases"
+ALIAS_FILE="eza.shell_aliases"
