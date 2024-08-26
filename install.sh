@@ -2,11 +2,13 @@
 source variables.sh
 
 # Config
-CONFIG_FILES=($(find . -type f ! -name "variables.sh" ! -name "*.shell_aliases"))
-for CONFIG_FILE in "${CONFIG_FILES[@]}"; do
-  cp $CONFIG_FILE "$CONFIG_DIRECTORY/"
-  echo "Copied $CONFIG_FILE to $CONFIG_DIRECTORY"
-done
+if [ -n "$CONFIG_DIRECTORY" ]; then
+  CONFIG_FILES=($(find . -type f ! -name "variables.sh" ! -name "*.shell_aliases"))
+  for CONFIG_FILE in "${CONFIG_FILES[@]}"; do
+    cp $CONFIG_FILE "$CONFIG_DIRECTORY/"
+    echo "Copied $CONFIG_FILE to $CONFIG_DIRECTORY"
+  done
+fi
 
 # Aliases
 if [ -n "$ALIAS_FILE" ]; then
