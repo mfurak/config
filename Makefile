@@ -1,5 +1,5 @@
 e-%:
-	cd $* && ./extract.sh
+	cd $* && ../extract.sh
 
 i-%:
-	cd $* && ./install.sh
+	cd $* && ../install.sh
