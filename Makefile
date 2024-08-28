@@ -5,10 +5,14 @@ define run-script
 endef
 
 # Targets for extract and install
-e-%: SCRIPT = extract.sh
-e-%:
+extract-%: SCRIPT = extract.sh
+extract-%:
 	$(run-script)
 
-i-%: SCRIPT = install.sh
-i-%:
+e-%: extract-%;
+
+install-%: SCRIPT = install.sh
+install-%:
 	$(run-script)
+
+i-%: install-%;
