@@ -2,9 +2,9 @@
 source ./variables.sh
 source ../variables.sh
 
-# Config
+# Config files
 if [ -n "$CONFIG_DIRECTORY" ]; then
-  for CONFIG_FILE in "${CONFIG_FILES[@]}"; do
+  for CONFIG_FILE in $CONFIG_FILES; do
     cp "$CONFIG_DIRECTORY/$CONFIG_FILE" ./
     echo "Copied $CONFIG_DIRECTORY/$CONFIG_FILE"
   done
