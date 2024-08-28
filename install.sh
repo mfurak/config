@@ -1,5 +1,5 @@
 #! /bin/bash
-source variables.sh
+source ./variables.sh
 
 # Config
 if [ -n "$CONFIG_DIRECTORY" ]; then
