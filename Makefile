@@ -8,9 +8,10 @@ endef
 # General rule to change directory and run a script if it exists and is not in the skip list
 define run-script
 	if [ "$(strip $(call is_skip_folder,$*))" != "true" ]; then \
-	  cd $* && ../$(SCRIPT); \
-	  if [ -f $*/$(SCRIPT) ]; then \
-	    cd $* && ./$(SCRIPT); \
+	  cd ./$*; \
+	  ../$(SCRIPT); \
+	  if [ -f ./$(SCRIPT) ]; then \
+	    ./$(SCRIPT); \
 	  fi; \
 	else \
 	  echo "Skipping $*"; \
