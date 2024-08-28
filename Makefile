@@ -1,7 +1,20 @@
-# General rule to change directory and run a script if it exists
+SKIP_FOLDERS := chocolatey git mintty nvidia raspberry-pi shell ublock windows
+
+# Function to check if a folder is in the skip list
+define is_skip_folder
+	$(foreach folder,$(SKIP_FOLDERS),$(if $(filter $1,$(folder)),true))
+endef
+
+# General rule to change directory and run a script if it exists and is not in the skip list
 define run-script
-	cd $* && ../$(SCRIPT)
-	if [ -f $*/$(SCRIPT) ]; then cd $* && ./$(SCRIPT); fi
+	if [ "$(strip $(call is_skip_folder,$*))" != "true" ]; then \
+	  cd $* && ../$(SCRIPT); \
+	  if [ -f $*/$(SCRIPT) ]; then \
+	    cd $* && ./$(SCRIPT); \
+	  fi; \
+	else \
+	  echo "Skipping $*"; \
+	fi
 endef
 
 # Targets for extract and install
