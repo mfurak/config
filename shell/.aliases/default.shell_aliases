@@ -14,8 +14,8 @@ alias .......='cd ../../../../../../'
 alias ........='cd ../../../../../../../'
 alias ll='ls -lah'
 alias vi='vim'
-alias v='vim .'
 alias n='vim'
+alias v='n .'
 
 ## Python
 alias py='python'
