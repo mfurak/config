@@ -6,7 +6,7 @@
     }
   },
   {
-    "context": "Editor",
+    "context": "Editor && vim_mode == normal",
     "bindings": {
       "g r": "editor::FindAllReferences"
     }
