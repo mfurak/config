@@ -30,5 +30,9 @@
   "buffer_font_family": "Zed Plex Mono",
   "buffer_font_size": 15,
   "buffer_font_weight": 700,
-  "autosave": "on_focus_change"
+  "autosave": "on_focus_change",
+  "project_panel": {
+    "auto_fold_dirs": false
+  },
+  "file_types": { "Shell Script": ["inputrc", "shell_aliases"] }
 }
