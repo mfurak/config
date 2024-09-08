@@ -1,10 +1,10 @@
 ################################# LINUX #######################################
 [core]
-	editor = nvim
+    editor = nvim
 [merge]
-	tool = kdiff3
-	guitool = kdiff3
+    tool = kdiff3
+    guitool = kdiff3
 [diff]
-	tool = kdiff3
-	guitool = kdiff3
+    tool = kdiff3
+    guitool = kdiff3
 ############################## END OF LINUX ###################################

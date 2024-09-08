@@ -1,30 +1,30 @@
 ################################# DEFAULT #####################################
 [core]
-	autocrlf = false
+    autocrlf = false
 [color]
-	diff = auto
-	status = auto
-	branch = auto
-	interactive = auto
-	ui = auto
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    ui = auto
 [fetch]
-	prune = true
+    prune = true
 [pull]
-	rebase = true
+    rebase = true
 [push]
-	default = current
-	useForceIfIncludes = true
+    default = current
+    useForceIfIncludes = true
 [rebase]
-	autoSquash = true
-	autoStash = false
+    autoSquash = true
+    autoStash = false
 [user]
-	useConfigOnly = true
+    useConfigOnly = true
 [difftool]
-	prompt = false
-	keepBackup = false
-	trustExitCode = false
+    prompt = false
+    keepBackup = false
+    trustExitCode = false
 [mergetool]
-	prompt = false
-	keepBackup = false
-	keepTemporaries = false
+    prompt = false
+    keepBackup = false
+    keepTemporaries = false
 ############################## END OF DEFAULT #################################
