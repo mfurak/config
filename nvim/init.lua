@@ -190,6 +190,24 @@ vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right win
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
+---------- NOTE: CUSTOM ----------
+-- Define a mapping for jk to switch to normal mode
+vim.api.nvim_set_keymap("i", "jk", "<Esc>", { noremap = true, silent = true })
+-- Define a keymapping timeout in milliseconds
+vim.o.timeoutlen = 750
+-- Enable relative line numbers
+vim.opt.relativenumber = true
+-- Enable Nerd Font
+vim.g.have_nerd_font = true
+-- Disable arrow keys in normal mode
+vim.keymap.set("n", "<left>", '<cmd>echo "Use h to move!!"<CR>')
+vim.keymap.set("n", "<right>", '<cmd>echo "Use l to move!!"<CR>')
+vim.keymap.set("n", "<up>", '<cmd>echo "Use k to move!!"<CR>')
+vim.keymap.set("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
+-- Set highlight on search
+vim.o.hlsearch = true
+------ NOTE: END OF CUSTOM -------
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -604,36 +622,51 @@ require("lazy").setup({
       --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
-      local servers = {
-        -- clangd = {},
-        -- gopls = {},
-        -- pyright = {},
-        -- rust_analyzer = {},
-        -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
-        --
-        -- Some languages (like typescript) have entire language plugins that can be useful:
-        --    https://github.com/pmizio/typescript-tools.nvim
-        --
-        -- But for many setups, the LSP (`tsserver`) will work just fine
-        -- tsserver = {},
-        --
+      -- local servers = {
+      --   -- clangd = {},
+      --   -- gopls = {},
+      --   -- pyright = {},
+      --   -- rust_analyzer = {},
+      --   -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
+      --   --
+      --   -- Some languages (like typescript) have entire language plugins that can be useful:
+      --   --    https://github.com/pmizio/typescript-tools.nvim
+      --   --
+      --   -- But for many setups, the LSP (`tsserver`) will work just fine
+      --   -- tsserver = {},
+      --   --
+      --
+      --   lua_ls = {
+      --     -- cmd = {...},
+      --     -- filetypes = { ...},
+      --     -- capabilities = {},
+      --     settings = {
+      --       Lua = {
+      --         completion = {
+      --           callSnippet = "Replace",
+      --         },
+      --         -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
+      --         -- diagnostics = { disable = { 'missing-fields' } },
+      --       },
+      --     },
+      --   },
+      -- }
 
+      ---------- NOTE: CUSTOM ----------
+      local servers = {
         lua_ls = {
-          -- cmd = {...},
-          -- filetypes = { ...},
-          -- capabilities = {},
           settings = {
             Lua = {
               completion = {
                 callSnippet = "Replace",
               },
-              -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-              -- diagnostics = { disable = { 'missing-fields' } },
             },
           },
         },
+        stylua = {},
+        shfmt = {},
       }
-
+      ------ NOTE: END OF CUSTOM -------
       -- Ensure the servers and tools above are installed
       --  To check the current status of installed tools and/or manually install
       --  other tools, you can run
@@ -697,14 +730,20 @@ require("lazy").setup({
           lsp_format = lsp_format_opt,
         }
       end,
+      -- formatters_by_ft = {
+      --   lua = { "stylua" },
+      --   -- Conform can also run multiple formatters sequentially
+      --   -- python = { "isort", "black" },
+      --   --
+      --   -- You can use 'stop_after_first' to run the first available formatter from the list
+      --   -- javascript = { "prettierd", "prettier", stop_after_first = true },
+      -- },
+      ---------- NOTE: CUSTOM ----------
       formatters_by_ft = {
         lua = { "stylua" },
-        -- Conform can also run multiple formatters sequentially
-        -- python = { "isort", "black" },
-        --
-        -- You can use 'stop_after_first' to run the first available formatter from the list
-        -- javascript = { "prettierd", "prettier", stop_after_first = true },
+        sh = { "shfmt" },
       },
+      ------ NOTE: END OF CUSTOM -------
     },
   },
 
@@ -809,6 +848,11 @@ require("lazy").setup({
 
           -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
           --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
+
+          ---------- NOTE: CUSTOM ----------
+          ["<Tab>"] = cmp.mapping.confirm({ select = true }),
+          ["<Enter>"] = cmp.mapping.confirm({ select = true }),
+          ------ NOTE: END OF CUSTOM -------
         }),
         sources = {
           {
@@ -824,23 +868,45 @@ require("lazy").setup({
     end,
   },
 
+  -- { -- You can easily change to a different colorscheme.
+  --   -- Change the name of the colorscheme plugin below, and then
+  --   -- change the command in the config to whatever the name of that colorscheme is.
+  --   --
+  --   -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
+  --   'folke/tokyonight.nvim',
+  --   priority = 1000, -- Make sure to load this before all the other start plugins.
+  --   init = function()
+  --     -- Load the colorscheme here.
+  --     -- Like many other themes, this one has different styles, and you could load
+  --     -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
+  --     vim.cmd.colorscheme 'tokyonight-night'
+  --
+  --     -- You can configure highlights by doing something like:
+  --     vim.cmd.hi 'Comment gui=none'
+  --   end,
+  -- },
+  ---------- NOTE: CUSTOM ----------
   { -- You can easily change to a different colorscheme.
     -- Change the name of the colorscheme plugin below, and then
     -- change the command in the config to whatever the name of that colorscheme is.
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    "folke/tokyonight.nvim",
+    "navarasu/onedark.nvim",
     priority = 1000, -- Make sure to load this before all the other start plugins.
     init = function()
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme("tokyonight-night")
+      vim.cmd.colorscheme("onedark")
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi("Comment gui=none")
     end,
+    opts = {
+      style = "light",
+    },
   },
+  ------ NOTE: END OF CUSTOM -------
 
   -- Highlight todo, notes, etc in comments
   {
@@ -893,9 +959,22 @@ require("lazy").setup({
     main = "nvim-treesitter.configs", -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
+      -- ensure_installed = {
+      --   "bash",
+      --   "c",
+      --   "diff",
+      --   "html",
+      --   "lua",
+      --   "luadoc",
+      --   "markdown",
+      --   "markdown_inline",
+      --   "query",
+      --   "vim",
+      --   "vimdoc",
+      -- },
+      ---------- NOTE: CUSTOM ----------
       ensure_installed = {
         "bash",
-        "c",
         "diff",
         "html",
         "lua",
@@ -906,6 +985,7 @@ require("lazy").setup({
         "vim",
         "vimdoc",
       },
+      ------ NOTE: END OF CUSTOM -------
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
