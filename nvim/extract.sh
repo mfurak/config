@@ -2,4 +2,4 @@
 source ./variables.sh
 
 # Additional Config
-cp -r "$CONFIG_DIRECTORY/$PLUGINS_DIRECTORY" "./$PLUGINS_DIRECTORY/"
+cp -r "$CONFIG_DIRECTORY/$PLUGINS_DIRECTORY" "./"
