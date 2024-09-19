@@ -632,8 +632,8 @@ require("lazy").setup({
       --   -- Some languages (like typescript) have entire language plugins that can be useful:
       --   --    https://github.com/pmizio/typescript-tools.nvim
       --   --
-      --   -- But for many setups, the LSP (`tsserver`) will work just fine
-      --   -- tsserver = {},
+      --   -- But for many setups, the LSP (`ts_ls`) will work just fine
+      --   -- ts_ls = {},
       --   --
       --
       --   lua_ls = {
@@ -689,7 +689,7 @@ require("lazy").setup({
             local server = servers[server_name] or {}
             -- This handles overriding only values explicitly passed
             -- by the server configuration above. Useful when disabling
-            -- certain features of an LSP (for example, turning off formatting for tsserver)
+            -- certain features of an LSP (for example, turning off formatting for ts_ls)
             server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
             require("lspconfig")[server_name].setup(server)
           end,
@@ -873,16 +873,16 @@ require("lazy").setup({
   --   -- change the command in the config to whatever the name of that colorscheme is.
   --   --
   --   -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-  --   'folke/tokyonight.nvim',
+  --   "folke/tokyonight.nvim",
   --   priority = 1000, -- Make sure to load this before all the other start plugins.
   --   init = function()
   --     -- Load the colorscheme here.
   --     -- Like many other themes, this one has different styles, and you could load
   --     -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-  --     vim.cmd.colorscheme 'tokyonight-night'
+  --     vim.cmd.colorscheme("tokyonight-night")
   --
   --     -- You can configure highlights by doing something like:
-  --     vim.cmd.hi 'Comment gui=none'
+  --     vim.cmd.hi("Comment gui=none")
   --   end,
   -- },
   ---------- NOTE: CUSTOM ----------
@@ -902,8 +902,11 @@ require("lazy").setup({
       -- You can configure highlights by doing something like:
       vim.cmd.hi("Comment gui=none")
     end,
+  },
+  {
+    "f-person/auto-dark-mode.nvim",
     opts = {
-      style = "light",
+      update_interval = 3000,
     },
   },
   ------ NOTE: END OF CUSTOM -------
