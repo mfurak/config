@@ -1,4 +1,4 @@
-SKIP_FOLDERS := chocolatey git mintty nvidia raspberry-pi shell ublock windows
+SKIP_FOLDERS := raycast rectangle shell ssh
 ALL_FOLDERS := $(shell find . -maxdepth 1 -type d -not -path '.' -not -name '.git' -exec basename {} \;)
 
 # Function to check if a folder is in the skip list
@@ -34,6 +34,7 @@ extract-%:
 .PHONY: e-all
 e-all: $(addprefix e-, $(ALL_FOLDERS))
 e-%: extract-%;
+e: e-all
 
 install-%: SCRIPT = install.sh
 install-%:
@@ -42,3 +43,7 @@ install-%:
 .PHONY: i-all
 i-all: $(addprefix i-, $(ALL_FOLDERS))
 i-%: install-%;
+i: i-all
+
+fmt:
+	shfmt -l -w .
