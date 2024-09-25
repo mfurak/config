@@ -1,4 +1,4 @@
-SKIP_FOLDERS := raycast rectangle shell ssh
+SKIP_FOLDERS := raycast rectangle shell ssh chocolatey
 ALL_FOLDERS := $(shell find . -maxdepth 1 -type d -not -path '.' -not -name '.git' -exec basename {} \;)
 
 # Function to check if a folder is in the skip list
