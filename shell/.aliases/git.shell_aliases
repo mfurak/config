@@ -1,5 +1,5 @@
 #-----------------------------------GIT-------------------------------------------------------------------
-alias gs='git status'
+alias gs='git status -s'
 
 alias gcl='git clone'
 
@@ -71,6 +71,7 @@ alias gra='grb --abort'
 
 alias gst='git stash'
 alias gsta='gst apply'
+alias gstp='gst pop'
 alias gstc='gst clear'
 
 alias gcn='git clean'
