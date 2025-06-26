@@ -2,7 +2,8 @@
 alias cl='sudo paccache -ruk0 && \
 yes | sudo pacman -Scc && \
 sudo journalctl --vacuum-time=1d && \
-pamac clean --build-files --no-confirm'
+pamac clean --build-files --no-confirm && \
+pamac remove --orphans'
 # Every run of pacman-mirrors requires you to syncronize your database and update your system
 alias speed='sudo pacman-mirrors --fasttrack && up'
 alias up='pamac upgrade -a'
