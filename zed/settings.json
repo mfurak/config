@@ -19,7 +19,7 @@
   },
   "features": {
     "copilot": false,
-    "inline_completion_provider": "none"
+    "edit_prediction_provider": "none"
   },
   "vim_mode": true,
   "relative_line_numbers": true,
