@@ -142,7 +142,7 @@ ex() {
 }
 
 # import shell aliases
-for f in ~/.aliases/*.shell_aliases; do source $f; done
+for f in ~/.shell_aliases/*.shell_aliases; do source $f; done
 
 # starship init
 eval "$(starship init bash)"
