@@ -1,16 +1,9 @@
-#-------------------------------DEFAULT-------------------------------------------------------------------
-# don't beep the terminal
-unsetopt BEEP
+CONFIG_DIR="$HOME/.shell_config"
 
-# case insensitive path-completion
-autoload -Uz +X compinit && compinit
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-zstyle ':completion:*' menu select
-bindkey '^[[Z' reverse-menu-complete
-
-# import shell aliases
-for f in ~/.aliases/*.shell_aliases; do source $f; done
-
-# starship init
-eval "$(starship init zsh)"
-#-------------------------------END OF DEFAULT------------------------------------------------------------
+if [[ -d $CONFIG_DIR ]]; then
+    for FILE in "$CONFIG_DIR"/*; do
+      if [[ -f $FILE ]]; then
+        source "$FILE"
+      fi
+    done
+fi
