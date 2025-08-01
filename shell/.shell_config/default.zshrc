@@ -1,4 +1,3 @@
-#-------------------------------DEFAULT-------------------------------------------------------------------
 # don't beep the terminal
 unsetopt BEEP
 
@@ -13,4 +12,3 @@ for f in ~/.shell_aliases/*.shell_aliases; do source $f; done
 
 # starship init
 eval "$(starship init zsh)"
-#-------------------------------END OF DEFAULT------------------------------------------------------------

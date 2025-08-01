@@ -1,4 +1,3 @@
-#-------------------------------DEFAULT-------------------------------------------------------------------
 # if bash isn't running interactively return
 [[ $- != *i* ]] && return
 [ -z "$PS1" ] && return
@@ -146,4 +145,3 @@ for f in ~/.shell_aliases/*.shell_aliases; do source $f; done
 
 # starship init
 eval "$(starship init bash)"
-#-------------------------------END OF DEFAULT------------------------------------------------------------
