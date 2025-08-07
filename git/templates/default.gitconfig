@@ -27,4 +27,6 @@
     prompt = false
     keepBackup = false
     keepTemporaries = false
+[include]
+    path = .gitconfig-credentials
 ############################## END OF DEFAULT #################################
