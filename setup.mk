@@ -13,22 +13,23 @@ define copy-files
 		if [ -n "$(DEBUG)" ]; then \
 			echo "Copying from '$(2)/$$TRIMMED_FILE' to '$(3)/$$TRIMMED_FILE'"; \
 		fi; \
-		cp "$(2)/$$TRIMMED_FILE" "$(3)/$$TRIMMED_FILE"; \
+		mkdir -p "$(3)"; \
+		if [ -f "$(2)/$$TRIMMED_FILE" ]; then \
+			cp "$(2)/$$TRIMMED_FILE" "$(3)/$$TRIMMED_FILE"; \
+		else \
+			echo "$$TRIMMED_FILE doesn't exist at $(2)"; \
+		fi; \
 	done
 endef
 
 install-aliases:
-	mkdir -p "$(TARGET_ALIASES_DIRECTORY)"
 	$(call copy-files,$(LOCAL_ALIASES_DIRECTORY),$(LOCAL_ALIASES_DIRECTORY),$(TARGET_ALIASES_DIRECTORY))
 
 extract-aliases:
-	mkdir -p "$(LOCAL_ALIASES_DIRECTORY)"
 	$(call copy-files,$(LOCAL_ALIASES_DIRECTORY),$(TARGET_ALIASES_DIRECTORY),$(LOCAL_ALIASES_DIRECTORY))
 
 install-config-files:
-	mkdir -p "$(TARGET_CONFIG_DIRECTORY)"
 	$(call copy-files,$(LOCAL_CONFIG_DIRECTORY),$(LOCAL_CONFIG_DIRECTORY),$(TARGET_CONFIG_DIRECTORY))
 
 extract-config-files:
-	mkdir -p "$(LOCAL_CONFIG_DIRECTORY)"
 	$(call copy-files,$(LOCAL_CONFIG_DIRECTORY),$(TARGET_CONFIG_DIRECTORY),$(LOCAL_CONFIG_DIRECTORY))
