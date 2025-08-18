@@ -1,4 +1,3 @@
-#-------------------------------DEFAULT-------------------------------------------------------------------
 ## Fixes
 # A trailing space causes the next word to be checked for alias substitution
 alias xargs='xargs '
@@ -19,4 +18,3 @@ alias v='n .'
 
 ## Python
 alias py='python'
-#-------------------------------END OF DEFAULT------------------------------------------------------------
