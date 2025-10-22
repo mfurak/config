@@ -27,6 +27,9 @@ symbol = "+"
 [battery]
 disabled = true
 
+[time]
+disabled = false
+
 # Symbols
 [aws]
 symbol = "  "
