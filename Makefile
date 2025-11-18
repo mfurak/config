@@ -12,7 +12,7 @@ install-%:
 		if [ -n "$(DEBUG)" ]; then echo "Installing '$*'"; fi; \
 		cd "$*" && $(MAKE) install; \
 	else \
-	  echo "Error: '$*' is not an allowed tool."; \
+		echo "Error: '$*' MUST be set up manually."; \
 	fi
 
 .PHONY: e-all
