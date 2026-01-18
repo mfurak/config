@@ -28,5 +28,6 @@ extract-%:
 			echo "Error: '$*' is not an allowed tool."; \
 		fi
 
-fmt:
+f: format
+format:
 	shfmt -l -w .
