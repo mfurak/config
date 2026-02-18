@@ -6,18 +6,21 @@ TARGET_ALIASES_DIRECTORY := "$$HOME/.shell_aliases"
 LOCAL_CONFIG_DIRECTORY := "config-files"
 
 define copy-files
-	FILES=$$(find "$(1)" -type f); \
+	LOCAL_DIRECTORY="$(1)"; \
+	SOURCE_DIRECTORY="$(2)"; \
+	TARGET_DIRECTORY="$(3)"; \
+	FILES=$$(find "$$LOCAL_DIRECTORY" -type f); \
 	IFS=$$'\n'; \
 	for FILE in $$FILES; do \
 		TRIMMED_FILE=$${FILE#*/}; \
 		if [ -n "$(DEBUG)" ]; then \
-			echo "Copying from '$(2)/$$TRIMMED_FILE' to '$(3)/$$TRIMMED_FILE'"; \
+			echo "Copying from '$$SOURCE_DIRECTORY/$$TRIMMED_FILE' to '$$TARGET_DIRECTORY/$$TRIMMED_FILE'"; \
 		fi; \
-		mkdir -p "$(3)"; \
-		if [ -f "$(2)/$$TRIMMED_FILE" ]; then \
-			cp "$(2)/$$TRIMMED_FILE" "$(3)/$$TRIMMED_FILE"; \
+		mkdir -p "$$TARGET_DIRECTORY"; \
+		if [ -f "$$SOURCE_DIRECTORY/$$TRIMMED_FILE" ]; then \
+			cp "$$SOURCE_DIRECTORY/$$TRIMMED_FILE" "$$TARGET_DIRECTORY/$$TRIMMED_FILE"; \
 		else \
-			echo "$$TRIMMED_FILE doesn't exist at $(2)"; \
+			echo "$$TRIMMED_FILE doesn't exist at $$SOURCE_DIRECTORY"; \
 		fi; \
 	done
 endef
