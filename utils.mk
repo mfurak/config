@@ -9,13 +9,13 @@ define symlink-files
 	LOCAL_DIRECTORY="$(1)"; \
 	TARGET_DIRECTORY="$(2)"; \
 	FULL_LOCAL_PATH=$$(pwd); \
-	FILE_PATHS=$$(find "$$LOCAL_DIRECTORY" -type f); \
+	LOCAL_FILE_PATHS=$$(find "$$LOCAL_DIRECTORY" -type f); \
 	IFS=$$'\n'; \
-	for FILE_PATH in $$FILE_PATHS; do \
-		TRIMMED_FILE_NAME=$${FILE_PATH#*/}; \
-		FILE_FOLDER_PATH=$${FILE_PATH%/*}/; \
+	for LOCAL_FILE_PATH in $$LOCAL_FILE_PATHS; do \
+		TRIMMED_FILE_NAME=$${LOCAL_FILE_PATH#*/}; \
+		FILE_FOLDER_PATH=$${LOCAL_FILE_PATH%/*}/; \
 		TRIMMED_FILE_FOLDER_PATH=$${FILE_FOLDER_PATH#$$LOCAL_DIRECTORY/}; \
-		FULL_LOCAL_FILE_PATH="$$FULL_LOCAL_PATH/$$FILE_PATH"; \
+		FULL_LOCAL_FILE_PATH="$$FULL_LOCAL_PATH/$$LOCAL_FILE_PATH"; \
 		FULL_TARGET_FILE_PATH="$$TARGET_DIRECTORY/$$TRIMMED_FILE_NAME"; \
 		TARGET_FOLDER_PATH="$$TARGET_DIRECTORY/$$TRIMMED_FILE_FOLDER_PATH"; \
 		if [ ! -d "$$TARGET_FOLDER_PATH" ]; then \
@@ -29,7 +29,7 @@ define symlink-files
 			fi; \
 		fi; \
 		if [ -n "$(DEBUG)" ]; then \
-			echo "Symlinking '$$FILE_PATH' to '$$FULL_TARGET_FILE_PATH'"; \
+			echo "Symlinking '$$LOCAL_FILE_PATH' to '$$FULL_TARGET_FILE_PATH'"; \
 		fi; \
 		ln -sf "$$FULL_LOCAL_FILE_PATH" "$$FULL_TARGET_FILE_PATH"; \
 	done
@@ -38,10 +38,10 @@ endef
 define import-files
 	LOCAL_DIRECTORY="$(1)"; \
 	TARGET_DIRECTORY="$(2)"; \
-	FILES=$$(find "$$LOCAL_DIRECTORY" -type f); \
+	LOCAL_FILE_PATHS=$$(find "$$LOCAL_DIRECTORY" -type f); \
 	IFS=$$'\n'; \
-	for FILE in $$FILES; do \
-		TRIMMED_FILE=$${FILE#*/}; \
+	for LOCAL_FILE_PATH in $$LOCAL_FILE_PATHS; do \
+		TRIMMED_FILE=$${LOCAL_FILE_PATH#*/}; \
 		FULL_TARGET_FILE_PATH="$$TARGET_DIRECTORY/$$TRIMMED_FILE"; \
 		if [ -L "$$FULL_TARGET_FILE_PATH" ]; then \
 			if [ -n "$(DEBUG)" ]; then \
@@ -49,9 +49,9 @@ define import-files
 			fi; \
 		elif [ -f "$$FULL_TARGET_FILE_PATH" ]; then \
 			if [ -n "$(DEBUG)" ]; then \
-				echo "Copying from '$$FULL_TARGET_FILE_PATH' to '$$LOCAL_DIRECTORY/$$TRIMMED_FILE'"; \
+				echo "Copying from '$$FULL_TARGET_FILE_PATH' to '$$LOCAL_FILE_PATH'"; \
 			fi; \
-			cp "$$FULL_TARGET_FILE_PATH" "$$LOCAL_DIRECTORY/$$TRIMMED_FILE"; \
+			cp "$$FULL_TARGET_FILE_PATH" "$$LOCAL_FILE_PATH"; \
 		else \
 			echo "'$$TRIMMED_FILE' doesn't exist at '$$TARGET_DIRECTORY'"; \
 		fi; \
@@ -61,26 +61,27 @@ endef
 define delete-files
 	LOCAL_DIRECTORY="$(1)"; \
 	TARGET_DIRECTORY="$(2)"; \
-	FILES=$$(find "$$LOCAL_DIRECTORY" -type f); \
+	LOCAL_FILE_PATHS=$$(find "$$LOCAL_DIRECTORY" -type f); \
 	IFS=$$'\n'; \
-	for FILE in $$FILES; do \
-		TRIMMED_FILE=$${FILE#*/}; \
+	for LOCAL_FILE_PATH in $$LOCAL_FILE_PATHS; do \
+		TRIMMED_FILE=$${LOCAL_FILE_PATH#*/}; \
+		FULL_TARGET_FILE_PATH="$$TARGET_DIRECTORY/$$TRIMMED_FILE"; \
 		if [ -n "$(DEBUG)" ]; then \
-			echo "Checking if '$$TARGET_DIRECTORY/$$TRIMMED_FILE' exists"; \
+			echo "Checking if '$$FULL_TARGET_FILE_PATH' exists"; \
 		fi; \
-		if [ -f "$$TARGET_DIRECTORY/$$TRIMMED_FILE" ]; then \
+		if [ -f "$$FULL_TARGET_FILE_PATH" ]; then \
 			if [ -n "$(DEBUG)" ]; then \
-				echo "Removing '$$TARGET_DIRECTORY/$$TRIMMED_FILE'"; \
+				echo "Removing '$$FULL_TARGET_FILE_PATH'"; \
 			fi; \
-			rm "$$TARGET_DIRECTORY/$$TRIMMED_FILE"; \
+			rm "$$FULL_TARGET_FILE_PATH"; \
 		else \
 			echo "'$$TRIMMED_FILE' doesn't exist at '$$TARGET_DIRECTORY'"; \
 		fi; \
 		if [ -n "$(DELETE_LOCAL)" ]; then \
 			if [ -n "$(DEBUG)" ]; then \
-				echo "Also removing '$$LOCAL_DIRECTORY/$$TRIMMED_FILE'"; \
+				echo "Also removing '$$LOCAL_FILE_PATH'"; \
 			fi; \
-			rm "$$LOCAL_DIRECTORY/$$TRIMMED_FILE"; \
+			rm "$$LOCAL_FILE_PATH"; \
 		fi; \
 	done
 endef
