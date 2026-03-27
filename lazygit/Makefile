@@ -1,12 +1,4 @@
 .SILENT:
 
 include ../utils.mk
-
-install:
-	make install-aliases
-
-extract:
-	make extract-aliases
-
-delete:
-	make delete-aliases
+include ../install_aliases.mk
