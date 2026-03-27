@@ -7,3 +7,6 @@ install:
 
 extract:
 	make extract-aliases
+
+delete:
+	make delete-aliases

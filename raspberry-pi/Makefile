@@ -6,3 +6,5 @@ install:
 	sudo apt update
 
 extract:
+
+delete:
