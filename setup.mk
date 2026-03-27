@@ -25,6 +25,59 @@ define copy-files
 	done
 endef
 
+define symlink-files
+	LOCAL_DIRECTORY="$(1)"; \
+	TARGET_DIRECTORY="$(2)"; \
+	FULL_LOCAL_PATH=$$(pwd); \
+	FILE_PATHS=$$(find "$$LOCAL_DIRECTORY" -type f); \
+	IFS=$$'\n'; \
+	for FILE_PATH in $$FILE_PATHS; do \
+		TRIMMED_FILE_NAME=$${FILE_PATH#*/}; \
+		FILE_FOLDER_PATH=$${FILE_PATH%/*}/; \
+		TRIMMED_FILE_FOLDER_PATH=$${FILE_FOLDER_PATH#$$LOCAL_DIRECTORY/}; \
+		FULL_LOCAL_FILE_PATH="$$FULL_LOCAL_PATH/$$FILE_PATH"; \
+		FULL_TARGET_FILE_PATH="$$TARGET_DIRECTORY/$$TRIMMED_FILE_NAME"; \
+		TARGET_FOLDER_PATH="$$TARGET_DIRECTORY/$$TRIMMED_FILE_FOLDER_PATH"; \
+		if [ ! -d "$$TARGET_FOLDER_PATH" ]; then \
+			if [ -n "$(DEBUG)" ]; then \
+				echo "Creating '$$TARGET_FOLDER_PATH' directory"; \
+			fi; \
+			mkdir -p "$$TARGET_FOLDER_PATH"; \
+		else \
+			if [ -n "$(DEBUG)" ]; then \
+				echo "Directory '$$TARGET_FOLDER_PATH' exists at '$$TARGET_DIRECTORY'"; \
+			fi; \
+		fi; \
+		if [ -n "$(DEBUG)" ]; then \
+			echo "Symlinking '$$FILE_PATH' to '$$FULL_TARGET_FILE_PATH'"; \
+		fi; \
+		ln -sf "$$FULL_LOCAL_FILE_PATH" "$$FULL_TARGET_FILE_PATH"; \
+	done
+endef
+
+define import-files
+	LOCAL_DIRECTORY="$(1)"; \
+	TARGET_DIRECTORY="$(2)"; \
+	FILES=$$(find "$$LOCAL_DIRECTORY" -type f); \
+	IFS=$$'\n'; \
+	for FILE in $$FILES; do \
+		TRIMMED_FILE=$${FILE#*/}; \
+		FULL_TARGET_FILE_PATH="$$TARGET_DIRECTORY/$$TRIMMED_FILE"; \
+		if [ -L "$$FULL_TARGET_FILE_PATH" ]; then \
+			if [ -n "$(DEBUG)" ]; then \
+				echo "File '$$FULL_TARGET_FILE_PATH' is already symlinked"; \
+			fi; \
+		elif [ -f "$$FULL_TARGET_FILE_PATH" ]; then \
+			if [ -n "$(DEBUG)" ]; then \
+				echo "Copying from '$$FULL_TARGET_FILE_PATH' to '$$LOCAL_DIRECTORY/$$TRIMMED_FILE'"; \
+			fi; \
+			cp "$$FULL_TARGET_FILE_PATH" "$$LOCAL_DIRECTORY/$$TRIMMED_FILE"; \
+		else \
+			echo "'$$TRIMMED_FILE' doesn't exist at '$$TARGET_DIRECTORY'"; \
+		fi; \
+	done
+endef
+
 define delete-files
 	LOCAL_DIRECTORY="$(1)"; \
 	TARGET_DIRECTORY="$(2)"; \
@@ -53,19 +106,19 @@ define delete-files
 endef
 
 install-aliases:
-	$(call copy-files,$(LOCAL_ALIASES_DIRECTORY),$(LOCAL_ALIASES_DIRECTORY),$(TARGET_ALIASES_DIRECTORY))
+	$(call symlink-files,$(LOCAL_ALIASES_DIRECTORY),$(TARGET_ALIASES_DIRECTORY))
 
 extract-aliases:
-	$(call copy-files,$(LOCAL_ALIASES_DIRECTORY),$(TARGET_ALIASES_DIRECTORY),$(LOCAL_ALIASES_DIRECTORY))
+	$(call import-files,$(LOCAL_ALIASES_DIRECTORY),$(TARGET_ALIASES_DIRECTORY))
 
 delete-aliases:
 	$(call delete-files,$(LOCAL_ALIASES_DIRECTORY),$(TARGET_ALIASES_DIRECTORY))
 
 install-config-files:
-	$(call copy-files,$(LOCAL_CONFIG_DIRECTORY),$(LOCAL_CONFIG_DIRECTORY),$(TARGET_CONFIG_DIRECTORY))
+	$(call symlink-files,$(LOCAL_CONFIG_DIRECTORY),$(TARGET_CONFIG_DIRECTORY))
 
 extract-config-files:
-	$(call copy-files,$(LOCAL_CONFIG_DIRECTORY),$(TARGET_CONFIG_DIRECTORY),$(LOCAL_CONFIG_DIRECTORY))
+	$(call import-files,$(LOCAL_CONFIG_DIRECTORY),$(TARGET_CONFIG_DIRECTORY))
 
 delete-config-files:
 	$(call delete-files,$(LOCAL_CONFIG_DIRECTORY),$(TARGET_CONFIG_DIRECTORY))
