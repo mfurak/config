@@ -1,8 +1,8 @@
+include tool_config.mk
+
 ALL_TOOLS := $(shell find . -maxdepth 1 -type d -not -path '.' -not -name '.git' -exec basename {} \;)
 ALLOWED_TOOLS := $(filter-out $(SKIP_TOOLS), $(ALL_TOOLS))
 MAKEFLAGS = --no-print-directory
-
-include tool_config.mk
 
 ## INSTALL
 .PHONY: i-all
@@ -16,7 +16,7 @@ install-%:
 	else \
 		echo "Error: '$*' MUST be set up manually."; \
 	fi
-# Debugging enablement
+# Enable debug logging
 .PHONY: di-all
 di: di-all
 di-all: $(addprefix di-, $(ALLOWED_TOOLS))
@@ -35,7 +35,7 @@ extract-%:
 	else \
 		echo "Error: '$*' is not an allowed tool."; \
 	fi
-# Debugging enablement
+# Enable debug logging
 .PHONY: de-all
 de: de-all
 de-all: $(addprefix de-, $(ALLOWED_TOOLS))
@@ -54,7 +54,7 @@ delete-all-%:
 	else \
 		echo "Error: '$*' is not an allowed tool."; \
 	fi
-# Debugging enablement
+# Enable debug logging
 .PHONY: dda-all
 dda: dda-all
 dda-all: $(addprefix dda-, $(ALLOWED_TOOLS))
@@ -73,7 +73,7 @@ delete-%:
 	else \
 		echo "Error: '$*' is not an allowed tool."; \
 	fi
-# Debugging enablement
+# Enable debug logging
 .PHONY: dd-all
 dd: dd-all
 dd-all: $(addprefix dd-, $(ALLOWED_TOOLS))
