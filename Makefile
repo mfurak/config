@@ -1,6 +1,7 @@
 SKIP_TOOLS := ublock
 ALL_TOOLS := $(shell find . -maxdepth 1 -type d -not -path '.' -not -name '.git' -exec basename {} \;)
 ALLOWED_TOOLS := $(filter-out $(SKIP_TOOLS), $(ALL_TOOLS))
+MAKEFLAGS = --no-print-directory
 
 ## INSTALL
 .PHONY: i-all
