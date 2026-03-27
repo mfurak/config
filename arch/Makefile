@@ -1,6 +1,6 @@
 .SILENT:
 
-include ../setup.mk
+include ../utils.mk
 
 install:
 	make install-aliases

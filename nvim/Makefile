@@ -1,6 +1,6 @@
 .SILENT:
 
-include ../setup.mk
+include ../utils.mk
 
 TARGET_CONFIG_DIRECTORY := "$$HOME/.config/nvim"
 
