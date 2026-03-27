@@ -2,12 +2,5 @@
 
 include ../utils.mk
 
-install:
+install::
 	reg import .\disable-web-search.reg
-	make install-aliases
-
-extract:
-	make extract-aliases
-
-delete:
-	make delete-aliases

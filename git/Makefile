@@ -6,15 +6,5 @@ TARGET_CONFIG_DIRECTORY := "$$HOME"
 TEMPLATES_DIRECTORY := "templates"
 TARGET := "unix"
 
-install:
+install::
 	cat "$(TEMPLATES_DIRECTORY)/default.gitconfig" "$(TEMPLATES_DIRECTORY)/$(TARGET).gitconfig" > "$(LOCAL_CONFIG_DIRECTORY)/.gitconfig"
-	make install-config-files TARGET_CONFIG_DIRECTORY="$(TARGET_CONFIG_DIRECTORY)"
-	make install-aliases
-
-extract:
-	make extract-config-files TARGET_CONFIG_DIRECTORY="$(TARGET_CONFIG_DIRECTORY)"
-	make extract-aliases
-
-delete:
-	make delete-config-files TARGET_CONFIG_DIRECTORY="$(TARGET_CONFIG_DIRECTORY)"
-	make delete-aliases
