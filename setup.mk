@@ -41,7 +41,7 @@ define delete-files
 			fi; \
 			rm "$$TARGET_DIRECTORY/$$TRIMMED_FILE"; \
 		else \
-			echo "$$TRIMMED_FILE doesn't exist at $$TARGET_DIRECTORY"; \
+			echo "'$$TRIMMED_FILE' doesn't exist at '$$TARGET_DIRECTORY'"; \
 		fi; \
 		if [ -n "$(DELETE_LOCAL)" ]; then \
 			if [ -n "$(DEBUG)" ]; then \
