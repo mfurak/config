@@ -103,3 +103,28 @@ extract-config-files:
 
 delete-config-files:
 	$(call delete-files,$(LOCAL_CONFIG_DIRECTORY),$(TARGET_CONFIG_DIRECTORY))
+
+# Targets that can be extended in each tool's folder
+install::
+	@if [ -d "$(LOCAL_CONFIG_DIRECTORY)" ]; then \
+		$(call symlink-files,$(LOCAL_CONFIG_DIRECTORY),$(TARGET_CONFIG_DIRECTORY)); \
+	fi
+	@if [ -d "$(LOCAL_ALIASES_DIRECTORY)" ]; then \
+		$(call symlink-files,$(LOCAL_ALIASES_DIRECTORY),$(TARGET_ALIASES_DIRECTORY)); \
+	fi
+
+extract::
+	@if [ -d "$(LOCAL_CONFIG_DIRECTORY)" ]; then \
+		$(call import-files,$(LOCAL_CONFIG_DIRECTORY),$(TARGET_CONFIG_DIRECTORY)); \
+	fi
+	@if [ -d "$(LOCAL_ALIASES_DIRECTORY)" ]; then \
+		$(call import-files,$(LOCAL_ALIASES_DIRECTORY),$(TARGET_ALIASES_DIRECTORY)); \
+	fi
+
+delete::
+	@if [ -d "$(LOCAL_CONFIG_DIRECTORY)" ]; then \
+		$(call delete-files,$(LOCAL_CONFIG_DIRECTORY),$(TARGET_CONFIG_DIRECTORY)); \
+	fi
+	@if [ -d "$(LOCAL_ALIASES_DIRECTORY)" ]; then \
+		$(call delete-files,$(LOCAL_ALIASES_DIRECTORY),$(TARGET_ALIASES_DIRECTORY)); \
+	fi
