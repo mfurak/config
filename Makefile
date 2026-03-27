@@ -28,6 +28,32 @@ extract-%:
 			echo "Error: '$*' is not an allowed tool."; \
 		fi
 
+.PHONY: da-all
+da: da-all
+da-all: $(addprefix da-, $(ALLOWED_TOOLS))
+da-%: delete-all-%;
+
+delete-all-%:
+				@if echo "$(ALLOWED_TOOLS)" | grep -wq "$*"; then \
+					if [ -n "$(DEBUG)" ]; then echo "Deleting '$*'"; fi; \
+					cd "$*" && $(MAKE) delete DELETE_LOCAL=true; \
+				else \
+					echo "Error: '$*' is not an allowed tool."; \
+				fi
+
+.PHONY: d-all
+d: d-all
+d-all: $(addprefix d-, $(ALLOWED_TOOLS))
+d-%: delete-%;
+
+delete-%:
+				@if echo "$(ALLOWED_TOOLS)" | grep -wq "$*"; then \
+					if [ -n "$(DEBUG)" ]; then echo "Deleting '$*'"; fi; \
+					cd "$*" && $(MAKE) delete; \
+				else \
+					echo "Error: '$*' is not an allowed tool."; \
+				fi
+
 f: format
 format:
 	shfmt -l -w .

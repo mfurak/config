@@ -25,14 +25,47 @@ define copy-files
 	done
 endef
 
+define delete-files
+	LOCAL_DIRECTORY="$(1)"; \
+	TARGET_DIRECTORY="$(2)"; \
+	FILES=$$(find "$$LOCAL_DIRECTORY" -type f); \
+	IFS=$$'\n'; \
+	for FILE in $$FILES; do \
+		TRIMMED_FILE=$${FILE#*/}; \
+		if [ -n "$(DEBUG)" ]; then \
+			echo "Checking if '$$TARGET_DIRECTORY/$$TRIMMED_FILE' exists"; \
+		fi; \
+		if [ -f "$$TARGET_DIRECTORY/$$TRIMMED_FILE" ]; then \
+			if [ -n "$(DEBUG)" ]; then \
+				echo "Removing '$$TARGET_DIRECTORY/$$TRIMMED_FILE'"; \
+			fi; \
+			rm "$$TARGET_DIRECTORY/$$TRIMMED_FILE"; \
+		else \
+			echo "$$TRIMMED_FILE doesn't exist at $$TARGET_DIRECTORY"; \
+		fi; \
+		if [ -n "$(DELETE_LOCAL)" ]; then \
+			if [ -n "$(DEBUG)" ]; then \
+				echo "Also removing '$$LOCAL_DIRECTORY/$$TRIMMED_FILE'"; \
+			fi; \
+			rm "$$LOCAL_DIRECTORY/$$TRIMMED_FILE"; \
+		fi; \
+	done
+endef
+
 install-aliases:
 	$(call copy-files,$(LOCAL_ALIASES_DIRECTORY),$(LOCAL_ALIASES_DIRECTORY),$(TARGET_ALIASES_DIRECTORY))
 
 extract-aliases:
 	$(call copy-files,$(LOCAL_ALIASES_DIRECTORY),$(TARGET_ALIASES_DIRECTORY),$(LOCAL_ALIASES_DIRECTORY))
 
+delete-aliases:
+	$(call delete-files,$(LOCAL_ALIASES_DIRECTORY),$(TARGET_ALIASES_DIRECTORY))
+
 install-config-files:
 	$(call copy-files,$(LOCAL_CONFIG_DIRECTORY),$(LOCAL_CONFIG_DIRECTORY),$(TARGET_CONFIG_DIRECTORY))
 
 extract-config-files:
 	$(call copy-files,$(LOCAL_CONFIG_DIRECTORY),$(TARGET_CONFIG_DIRECTORY),$(LOCAL_CONFIG_DIRECTORY))
+
+delete-config-files:
+	$(call delete-files,$(LOCAL_CONFIG_DIRECTORY),$(TARGET_CONFIG_DIRECTORY))
