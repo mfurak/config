@@ -86,24 +86,6 @@ define delete-files
 	done
 endef
 
-install-aliases:
-	$(call symlink-files,$(LOCAL_ALIASES_DIRECTORY),$(TARGET_ALIASES_DIRECTORY))
-
-extract-aliases:
-	$(call import-files,$(LOCAL_ALIASES_DIRECTORY),$(TARGET_ALIASES_DIRECTORY))
-
-delete-aliases:
-	$(call delete-files,$(LOCAL_ALIASES_DIRECTORY),$(TARGET_ALIASES_DIRECTORY))
-
-install-config-files:
-	$(call symlink-files,$(LOCAL_CONFIG_DIRECTORY),$(TARGET_CONFIG_DIRECTORY))
-
-extract-config-files:
-	$(call import-files,$(LOCAL_CONFIG_DIRECTORY),$(TARGET_CONFIG_DIRECTORY))
-
-delete-config-files:
-	$(call delete-files,$(LOCAL_CONFIG_DIRECTORY),$(TARGET_CONFIG_DIRECTORY))
-
 # Targets that can be extended in each tool's folder
 install::
 	@if [ -d "$(LOCAL_CONFIG_DIRECTORY)" ]; then \
